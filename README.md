@@ -45,6 +45,16 @@ the full eligibility list stays off-chain as static JSON. See
 - [Foundry](https://book.getfoundry.sh/getting-started/installation) (`forge`, `anvil`, `cast`)
 - [Bun](https://bun.sh) 1.3+ (package manager and runtime for `merkle/` and `frontend/`)
 
+## Getting the code
+
+`lib/` (forge-std, OpenZeppelin) is fetched as git submodules, not committed:
+
+```shell
+git clone --recurse-submodules git@github.com:thanhphan20/web3-airdrop-simulator.git
+# or, if already cloned:
+git submodule update --init --recursive
+```
+
 ## Contracts: build, test, local dry run
 
 ```shell

@@ -44,6 +44,13 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
+      - name: Generate route tree
+        # src/routeTree.gen.ts is gitignored (generated) and is a side effect
+        # of any Vite invocation via the TanStack Router plugin. tsc needs it
+        # to exist before it can typecheck main.tsx/routes/*.tsx on a fresh
+        # checkout; the real build below regenerates it anyway.
+        run: bunx vite build
+
       - name: Typecheck
         run: bun run tsc -b
 

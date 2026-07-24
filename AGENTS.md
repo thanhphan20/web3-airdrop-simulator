@@ -29,7 +29,7 @@ Conventions for AI coding agents (and anyone else) working in this repo. See
 | `test/` | Foundry tests |
 | `script/` | Foundry deploy scripts (Sepolia) |
 | `merkle/` | Script generating the merkle tree from fake eligibility data (run with Bun) |
-| `lib/` | `forge-std` and `openzeppelin-contracts`, vendored as plain files (installed with `--no-git`, so no submodules — they're tracked directly) |
+| `lib/` | `forge-std` (v1.16.2) and `openzeppelin-contracts` (v5.6.1) as git submodules — see `.gitmodules`. Clone with `git clone --recurse-submodules`, or run `git submodule update --init --recursive` after a plain clone |
 | `frontend/` | React + Vite + TanStack Router + wagmi/viem + shadcn/ui claim page |
 
 ## Build / test loop
