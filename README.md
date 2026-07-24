@@ -19,6 +19,27 @@ conventions if you're an AI agent (or a person) picking this repo back up.
 - **Frontend** (`frontend/`) — a minimal claim page: React + Vite + TanStack
   Router + wagmi/viem + shadcn/ui.
 
+## Architecture
+
+```mermaid
+flowchart LR
+    E["merkle/eligibility.json\n(fake address -> amount)"] --> G["generate-merkle-tree.mjs"]
+    G --> R["merkle-root.json"]
+    G --> P["merkle-proofs.json"]
+
+    R --> D["DeployAirdrop.s.sol"]
+    D --> C["MerkleAirdrop.sol\n(Sepolia)"]
+
+    P --> F["frontend/src/data\n(bundled, no backend)"]
+    F --> UI["ClaimCard.tsx"]
+    UI -- "claim(account, amount, proof)" --> C
+    C -- "Claimed event" --> UI
+```
+
+Only a `bytes32` root and a per-address `hasClaimed` flag ever live on-chain —
+the full eligibility list stays off-chain as static JSON. See
+[SPEC.md](SPEC.md) for why.
+
 ## Prerequisites
 
 - [Foundry](https://book.getfoundry.sh/getting-started/installation) (`forge`, `anvil`, `cast`)

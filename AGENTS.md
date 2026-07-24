@@ -17,6 +17,9 @@ Conventions for AI coding agents (and anyone else) working in this repo. See
   it with real addresses or wire this up to any real distribution.
 - **Commits should not include a `Co-Authored-By: Claude` (or similar AI
   co-author) trailer** — explicit standing preference for this repo.
+- **Commit messages use a Conventional Commits prefix** (`feat:`, `fix:`,
+  `chore:`, `docs:`, `ci:`, etc.) — explicit standing preference for this
+  repo.
 
 ## Repo layout
 
@@ -71,3 +74,11 @@ hand-editing them.
 - **Package manager is Bun, not npm** — both `merkle/` and `frontend/` use
   `bun.lock` (tracked in git). Don't reintroduce `package-lock.json` or run
   `npm install`; if you add a dependency, use `bun add`.
+- **CI** (`.github/workflows/ci.yml`) has three jobs: `contracts` (forge fmt
+  check, build, test), `frontend` (bun install --frozen-lockfile, typecheck,
+  lint, audit, build), `merkle` (install --frozen-lockfile, audit, smoke-run
+  the generator). Audit is gated at `--audit-level=high` rather than default —
+  there's a known moderate-severity advisory in a transitive dependency of the
+  `shadcn` CLI (a dev-time-only tool, not shipped app code); don't lower this
+  threshold to silence it, and don't raise it to `critical` without checking
+  why first.
