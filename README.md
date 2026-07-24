@@ -1,66 +1,83 @@
-## Foundry
+# web3-airdrop-simulator
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A testnet-only learning project for understanding how merkle-tree airdrop claim
+systems actually work (the pattern Uniswap's original UNI airdrop used) — not a
+real token launch. No mainnet deployment, no real value, no real users. See
+[SPEC.md](SPEC.md) for the full design rationale and [AGENTS.md](AGENTS.md) for
+conventions if you're an AI agent (or a person) picking this repo back up.
 
-Foundry consists of:
+## What's here
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- **Contracts** (`src/`) — `TestToken.sol` (a plain mintable ERC20) and
+  `MerkleAirdrop.sol` (the claim contract: verifies a merkle proof, prevents
+  double-claiming, transfers the token).
+- **Tests** (`test/`) — full coverage including invalid-proof, double-claim,
+  wrong-amount, and wrong-account cases, plus a fuzz test.
+- **Merkle generation** (`merkle/`) — a Node script that builds the merkle
+  tree from a fake eligibility list and outputs the root + per-address proofs.
+- **Deploy scripts** (`script/`) — Foundry scripts for Sepolia.
+- **Frontend** (`frontend/`) — a minimal claim page: React + Vite + TanStack
+  Router + wagmi/viem + shadcn/ui.
 
-## Documentation
+## Prerequisites
 
-https://book.getfoundry.sh/
+- [Foundry](https://book.getfoundry.sh/getting-started/installation) (`forge`, `anvil`, `cast`)
+- Node.js 20+
 
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
+## Contracts: build, test, local dry run
 
 ```shell
-$ forge fmt
+forge build
+forge test -vv
 ```
 
-### Gas Snapshots
+Generate the merkle tree from the fake eligibility list:
 
 ```shell
-$ forge snapshot
+cd merkle
+npm install
+npm run generate   # writes output/merkle-root.json and output/merkle-proofs.json
 ```
 
-### Anvil
+Local end-to-end dry run on Anvil (no real ETH needed):
 
 ```shell
-$ anvil
+anvil   # in a separate terminal
+
+# from the project root, with anvil running:
+forge create src/TestToken.sol:TestToken --rpc-url http://127.0.0.1:8545 \
+  --private-key <anvil_default_key> --broadcast \
+  --constructor-args "Airdrop Test Token" "ATT" 1000000000000000000000000
+
+forge create src/MerkleAirdrop.sol:MerkleAirdrop --rpc-url http://127.0.0.1:8545 \
+  --private-key <anvil_default_key> --broadcast \
+  --constructor-args <token_address> <merkle_root>
 ```
 
-### Deploy
+## Deploying to Sepolia
+
+Never commit real secrets — `.env` is gitignored.
 
 ```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+cp .env.example .env
+# fill in SEPOLIA_RPC_URL and PRIVATE_KEY (a funded Sepolia testnet key only)
+
+forge script script/DeployToken.s.sol --rpc-url $SEPOLIA_RPC_URL --broadcast
+# note the printed token address, set TOKEN_ADDRESS in .env
+
+forge script script/DeployAirdrop.s.sol --rpc-url $SEPOLIA_RPC_URL --broadcast
+# this also funds the airdrop contract with the full tokenTotal
 ```
 
-### Cast
+## Frontend
 
 ```shell
-$ cast <subcommand>
+cd frontend
+npm install
+cp .env.local.example .env.local
+# fill in VITE_TOKEN_ADDRESS and VITE_AIRDROP_ADDRESS from the deploy step above
+npm run dev
 ```
 
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Connect an eligible wallet (see `merkle/eligibility.json`) via MetaMask on
+Sepolia to check eligibility and claim.
