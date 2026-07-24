@@ -22,7 +22,7 @@ conventions if you're an AI agent (or a person) picking this repo back up.
 ## Prerequisites
 
 - [Foundry](https://book.getfoundry.sh/getting-started/installation) (`forge`, `anvil`, `cast`)
-- Node.js 20+
+- [Bun](https://bun.sh) 1.3+ (package manager and runtime for `merkle/` and `frontend/`)
 
 ## Contracts: build, test, local dry run
 
@@ -35,8 +35,8 @@ Generate the merkle tree from the fake eligibility list:
 
 ```shell
 cd merkle
-npm install
-npm run generate   # writes output/merkle-root.json and output/merkle-proofs.json
+bun install
+bun run generate   # writes output/merkle-root.json and output/merkle-proofs.json
 ```
 
 Local end-to-end dry run on Anvil (no real ETH needed):
@@ -73,10 +73,10 @@ forge script script/DeployAirdrop.s.sol --rpc-url $SEPOLIA_RPC_URL --broadcast
 
 ```shell
 cd frontend
-npm install
+bun install
 cp .env.local.example .env.local
 # fill in VITE_TOKEN_ADDRESS and VITE_AIRDROP_ADDRESS from the deploy step above
-npm run dev
+bun run dev
 ```
 
 Connect an eligible wallet (see `merkle/eligibility.json`) via MetaMask on
