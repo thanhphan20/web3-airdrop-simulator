@@ -1,0 +1,11 @@
+{
+  "name": "merkle-gen",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node generate-merkle-tree.mjs"
+  },
+  "dependencies": {
+    "@openzeppelin/merkle-tree": "^1.0.8"
+  }
+}
