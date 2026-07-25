@@ -1,10 +1,16 @@
 import { http, createConfig } from "wagmi";
 import { sepolia } from "wagmi/chains";
-import { injected } from "wagmi/connectors";
+import { injected, mock } from "wagmi/connectors";
+
+// One of the fixed eligible test addresses (see merkle-proofs.json) — lets anyone try
+// the real eligibility flow without a browser wallet extension. The mock connector
+// can't sign transactions, so ClaimCard doesn't offer "Claim" while simulate-connected
+// — it points to the real "Connect Wallet" path for that instead.
+export const SIMULATED_ADDRESS = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266" as const;
 
 export const config = createConfig({
   chains: [sepolia],
-  connectors: [injected()],
+  connectors: [injected(), mock({ accounts: [SIMULATED_ADDRESS] })],
   transports: {
     [sepolia.id]: http(),
   },
