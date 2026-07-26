@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ConnectButton } from "@/components/ConnectButton";
 import { ClaimCard } from "@/components/ClaimCard";
 
@@ -122,6 +122,10 @@ function Index() {
         <p style={{ margin: 0, fontSize: 12, color: "oklch(0.56 0.02 82)", textAlign: "center", lineHeight: 1.55 }}>
           Testnet demo · tokens have no value. The cosmetic reward is decided client-side and never touches the real claim.
         </p>
+
+        <Link to="/points" style={{ fontSize: 12, textAlign: "center", color: "oklch(0.5 0.09 66)" }}>
+          Points farming demo (local Anvil) →
+        </Link>
       </div>
     </div>
   );

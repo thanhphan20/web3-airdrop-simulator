@@ -1,6 +1,8 @@
 cache/
 out/
+bot/output/
 .env
 .env.local
 node_modules/
 frontend/dist/
+.gstack/
