@@ -16,7 +16,8 @@ contract DeployAirdrop is Script {
         address tokenAddr = vm.envAddress("TOKEN_ADDRESS");
         uint256 pk = vm.envUint("PRIVATE_KEY");
 
-        string memory json = vm.readFile("merkle/output/merkle-root.json");
+        string memory rootPath = vm.envOr("MERKLE_ROOT_JSON_PATH", string("merkle/output/merkle-root.json"));
+        string memory json = vm.readFile(rootPath);
         bytes32 root = vm.parseJsonBytes32(json, ".root");
         uint256 tokenTotal = vm.parseJsonUint(json, ".tokenTotal");
 

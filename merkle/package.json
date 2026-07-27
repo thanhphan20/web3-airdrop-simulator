@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "bun generate-merkle-tree.mjs"
+    "generate": "bun generate-merkle-tree.mjs",
+    "generate:farmed": "bun generate-merkle-tree.mjs --input ../bot/output/points-eligibility.json --output-dir ./output/farmed"
   },
   "dependencies": {
     "@openzeppelin/merkle-tree": "^1.0.8"
