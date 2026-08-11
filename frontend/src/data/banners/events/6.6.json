@@ -1,0 +1,86 @@
+{
+	"patch": 6.6,
+	"data": [
+		{
+			"phase": 1,
+			"banners": {
+				"standardVersion": 5,
+				"events": {
+					"featured": [
+						{
+							"bannerName": "angels-reverie-1",
+							"character": "nicole",
+							"textOffset": { "l": 50.5, "b": 10.5 }
+						},
+						{
+							"bannerName": "rubedo-of-white-stone-born-2",
+							"character": "durin",
+							"textOffset": { "l": 50.5, "b": 10.5 }
+						}
+					],
+					"rateup": ["razor", "fischl", "prune"]
+				},
+				"weapons": {
+					"bannerName": "epitome-invocation-99",
+					"fatepointsystem": true,
+					"featured": [
+						{ "name": "angelos-heptades" },
+						{ "name": "athame-artis", "buttonPosition": { "l": 70 } }
+					],
+					"rateup": [
+						"moonweavers-dawn",
+						"the-bell",
+						"dragon_s-bane",
+						"the-widsith",
+						"mitternachts-waltz"
+					],
+					"textOffset": {
+						"featured": { "l": 48.5, "t": 71 },
+						"rateup": { "l": 77.5, "b": 16, "w": 20 }
+					}
+				}
+			}
+		},
+		{
+			"phase": 2,
+			"banners": {
+				"standardVersion": 5,
+				"events": {
+					"featured": [
+						{
+							"bannerName": "frostedge-nocturne-1",
+							"character": "lohen",
+							"textOffset": { "l": 50.5, "b": 10.5 }
+						},
+						{
+							"bannerName": "ancient-flame-ablaze-3",
+							"character": "mavuika",
+							"textOffset": { "l": 50.5, "b": 10.5 }
+						}
+					],
+					"rateup": ["razor", "fischl", "prune"]
+				},
+				"weapons": {
+					"bannerName": "epitome-invocation-100",
+					"fatepointsystem": true,
+					"featured": [
+						{ "name": "disaster-and-remorse" },
+						{ "name": "a-thousand-blazing-suns", "buttonPosition": { "l": 70 } }
+					],
+					"rateup": [
+						"moonweavers-dawn",
+						"the-bell",
+						"dragon_s-bane",
+						"the-widsith",
+						"mitternachts-waltz"
+					],
+					"textOffset": {
+						"featured": { "l": 48.5, "t": 71 },
+						"rateup": { "l": 77.5, "b": 16, "w": 20 }
+					}
+				}
+			}
+		}
+	]
+}
+

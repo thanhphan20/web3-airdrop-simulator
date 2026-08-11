@@ -1,0 +1,127 @@
+{
+	"patch": 6.5,
+	"data": [
+		{
+			"phase": 1,
+			"banners": {
+				"standardVersion": 5,
+				"events": {
+					"featured": [
+						{
+							"bannerName": "ya-hoho-compendium-1",
+							"character": "linnea",
+							"textOffset": { "l": 50.5, "b": 10.5 }
+						},
+						{
+							"bannerName": "piercing-shots-crimson-wake-3",
+							"character": "chasca",
+							"textOffset": { "l": 50.5, "b": 10.5 }
+						}
+					],
+					"rateup": ["noelle", "aino", "illuga"]
+				},
+				"weapons": {
+					"bannerName": "epitome-invocation-97",
+					"fatepointsystem": true,
+					"featured": [
+						{ "name": "golden-frostbound-oath" },
+						{ "name": "astral-vultures-crimson-plumage", "buttonPosition": { "l": 70 } }
+					],
+					"rateup": [
+						"flower-wreathed-feathers",
+						"lion_s-roar",
+						"dragon_s-bane",
+						"eye-of-perception",
+						"sacrificial-greatsword"
+					],
+					"textOffset": {
+						"featured": { "l": 42.5, "t": 67, "w": 30 },
+						"rateup": { "l": 77.5, "b": 16, "w": 20 }
+					}
+				}
+			}
+		},
+		{
+			"phase": 2,
+			"banners": {
+				"standardVersion": 5,
+				"events": {
+					"featured": [
+						{
+							"bannerName": "moonsong-of-the-groves-2",
+							"character": "lauma",
+							"textOffset": { "l": 50.5, "b": 10.5 }
+						},
+						{
+							"bannerName": "temptation-of-the-crimson-sands-2",
+							"character": "nefer",
+							"textOffset": { "l": 50.5, "b": 10.5 }
+						}
+					],
+					"rateup": ["jahoda", "kirara", "xingqiu"]
+				},
+				"weapons": {
+					"bannerName": "epitome-invocation-98",
+					"fatepointsystem": true,
+					"featured": [
+						{ "name": "nightweavers-looking-glass" },
+						{ "name": "reliquary-of-truth", "buttonPosition": { "l": 60 } }
+					],
+					"rateup": [
+						"dawning-frost",
+						"sacrificial-sword",
+						"favonius-lance",
+						"favonius-warbow",
+						"rainslasher"
+					],
+					"textOffset": {
+						"featured": { "l": 44.5, "t": 67, "w": 30 },
+						"rateup": { "l": 76.5, "b": 22, "w": 20 }
+					}
+				},
+				"chronicled": {
+					"bannerName": "dewlit-tranquility-1",
+					"region": "fontaine",
+					"characters": {
+						"5star": ["emilie", "clorinde", "sigewinne", "navia", "lyney"],
+						"4star": []
+					},
+					"weapons": {
+						"5star": [
+							"absolution",
+							"verdict",
+							"lumidouce-elegy",
+							"silvershower-heartstrings",
+							"the-first-great-magic"
+						],
+						"4star": [
+							"the-dockhand-assistant",
+							"lion_s-roar",
+							"sacrificial-sword",
+							"the-flute",
+							"favonius-sword",
+							"portable-power-saw",
+							"rainslasher",
+							"sacrificial-greatsword",
+							"the-bell",
+							"favonius-greatsword",
+							"prospector-drill",
+							"favonius-lance",
+							"dragon_s-bane",
+							"eye-of-perception",
+							"sacrificial-fragments",
+							"the-widsith",
+							"favonius-codex",
+							"range-gauge",
+							"rust",
+							"sacrificial-bow",
+							"the-stringless",
+							"favonius-warbow"
+						]
+					}
+				}
+			}
+		}
+	]
+}
+

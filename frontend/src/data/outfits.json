@@ -1,0 +1,299 @@
+{
+	"outfits": [
+		{
+			"name": "5-star-outrider",
+			"characterName": "amber",
+			"rarity": 4,
+			"offset": {
+				"splashArt": { "x": 1.62, "y": -5.56, "scale": 1.46 },
+				"wishCard": { "x": 66, "y": 37.80674157303371, "scale": 7.71 }
+			}
+		},
+		{
+			"name": "favonian-fevotion",
+			"characterName": "jean",
+			"rarity": 4,
+			"offset": {
+				"splashArt": { "x": 2.7412280701754383, "y": -3.0804093567251463, "scale": 1.36 },
+				"wishCard": { "x": 32.412623006447234, "y": 61.74109263657957, "scale": 9.17 }
+			}
+		},
+		{
+			"name": "executor_s-thorns",
+			"characterName": "rosaria",
+			"rarity": 4,
+			"offset": {
+				"splashArt": { "x": -0.608187134502924, "y": -5.552631578947368, "scale": 1.24 },
+				"wishCard": { "x": 11.309806582965727, "y": 64.11163895486936, "scale": 8.95 }
+			}
+		},
+		{
+			"name": "flowing-fate",
+			"characterName": "mona",
+			"rarity": 4,
+			"offset": {
+				"splashArt": { "x": -1.1023391812865497, "y": -0.4473684210526315, "scale": 1.6 },
+				"wishCard": { "x": 10.902612826603326, "y": 52.65320665083135, "scale": 10.88 }
+			}
+		},
+		{
+			"release": 1.6,
+			"name": "summertime-sparkle",
+			"characterName": "barbara",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"splashArt": { "x": -0.7410714285714286, "y": 3.386904761904762, "scale": 1.16 },
+				"wishCard": { "x": 39.886128364389236, "y": 70.09178743961353, "scale": 8.85 }
+			}
+		},
+		{
+			"release": 1.6,
+			"name": "sea-breeze-dandelion",
+			"characterName": "jean",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"splashArt": { "x": 0.37351190476190477, "y": 3.2901785714285716, "scale": 1.18 },
+				"wishCard": { "x": -25.54865424430642, "y": 92.17874396135267, "scale": 9.93 },
+				"storeCard": { "t": -15, "l": -30, "w": 125 }
+			}
+		},
+		{
+			"release": 2.4,
+			"name": "orchid_s-evening-gown",
+			"characterName": "ningguang",
+			"rarity": 4,
+			"price": 1680,
+			"offset": {
+				"splashArt": { "x": -2.604166666666667, "y": 2.2738095238095237, "scale": 1.04 },
+				"wishCard": { "x": -18.871635610766045, "y": 74.78985507246377, "scale": 7.08 }
+			}
+		},
+		{
+			"release": 2.4,
+			"name": "opulent-splendor",
+			"characterName": "keqing",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"splashArt": { "x": 1.638392857142857, "y": 6.901785714285714, "scale": 1.1 },
+				"wishCard": { "x": 39.34782608695652, "y": 86.33574879227052, "scale": 7.46 },
+				"storeCard": { "t": 0, "l": -20, "w": 110 }
+			}
+		},
+		{
+			"release": 2.8,
+			"name": "ein-immernachtstraum",
+			"characterName": "fischl",
+			"rarity": 4,
+			"price": 1680,
+			"offset": {
+				"splashArt": { "x": -2.5580357142857144, "y": 2.915178571428571, "scale": 1.04 },
+				"wishCard": { "x": -34.648033126293996, "y": 74.1352657004831, "scale": 7.46 }
+			}
+		},
+		{
+			"release": 2.8,
+			"name": "red-dead-of-night",
+			"characterName": "diluc",
+			"rarity": 5,
+			"price": 2480,
+			"promoPrice": 1980,
+			"offset": {
+				"splashArt": { "x": -12.322916666666666, "y": -7.5773809523809526, "scale": 1.52 },
+				"wishCard": { "x": -92.41200828157349, "y": 61.80434782608696, "scale": 11.77 },
+				"storeCard": { "l": -45, "t": -50, "w": 130 }
+			}
+		},
+		{
+			"release": 3.4,
+			"name": "a-sobriquet-under-shade",
+			"characterName": "lisa",
+			"rarity": 4,
+			"price": 1680,
+			"offset": {
+				"splashArt": { "x": 1.1770833333333333, "y": -0.9925595238095238, "scale": 1.2 },
+				"wishCard": { "x": -80.76604554865425, "y": 63.37198067632851, "scale": 8.67 }
+			}
+		},
+		{
+			"release": 3.4,
+			"name": "springbloom-missive",
+			"characterName": "kamisato-ayaka",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"splashArt": { "x": -2.3333333333333335, "y": -4.5773809523809526, "scale": 1.24 },
+				"wishCard": { "x": 29.668737060041412, "y": 58.376811594202906, "scale": 8.98 },
+				"storeCard": { "l": -20, "w": 120, "t": -35 }
+			}
+		},
+		{
+			"release": 3.8,
+			"name": "sailwind-shadow",
+			"characterName": "kaeya",
+			"rarity": 4,
+			"price": 1680,
+			"offset": {
+				"splashArt": { "x": -0.9940476190476191, "y": -3.9821428571428577, "scale": 1.24 },
+				"wishCard": { "x": -22.836438923395445, "y": 69.80193236714976, "scale": 9.88 }
+			}
+		},
+		{
+			"release": 3.8,
+			"name": "blossoming-starlight",
+			"characterName": "klee",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"splashArt": { "x": 2.9925595238095237, "y": 10.900297619047619, "scale": 1.36 },
+				"wishCard": { "x": 35.13457556935818, "y": 69.07729468599034, "scale": 9.88 },
+				"storeCard": { "l": -20, "w": 120, "t": -25 }
+			}
+		},
+		{
+			"release": 4.4,
+			"name": "frostflower-dew",
+			"characterName": "shenhe",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"splashArt": { "x": 0.683288409703504, "y": 2.6132075471698113, "scale": 1.24 },
+				"wishCard": { "x": -12.568218298555378, "y": 88.33483146067415, "scale": 10.88 },
+				"storeCard": { "l": -30, "w": 130, "t": -13 }
+			}
+		},
+		{
+			"release": 4.4,
+			"name": "twilight-blossom",
+			"characterName": "ganyu",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"splashArt": { "x": -2.2911051212938007, "y": -2.9191374663072778, "scale": 1.29 },
+				"wishCard": { "x": -28.131621187800963, "y": 60.35505617977528, "scale": 10.12 },
+				"storeCard": { "l": -30, "w": 125, "t": -30 }
+			}
+		},
+		{
+			"release": 4.4,
+			"name": "bamboo-rain",
+			"characterName": "xingqiu",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"splashArt": { "x": 1.9204851752021566, "y": 1.6388140161725067, "scale": 1.14 },
+				"wishCard": { "x": 42.722311396468704, "y": 66.40449438202248, "scale": 7.65 }
+			}
+		},
+		{
+			"release": 4.8,
+			"name": "breeze-of-sabaa",
+			"characterName": "nilou",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"storeCard": { "l": -28, "w": 115, "t": -35 },
+				"splashArt": { "x": -1.4214092140921408, "y": 8.271002710027101, "scale": 1.36 },
+				"wishCard": { "x": -55.46275395033861, "y": 59.65914221218962, "scale": 8.98 }
+			}
+		},
+		{
+			"release": 4.8,
+			"name": "phantom-in-boots",
+			"characterName": "kirara",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"splashArt": { "x": -0.24457308248914617, "y": 2.082489146164978, "scale": 1.48 },
+				"wishCard": { "x": 35.35473515248796, "y": 57.37411764705882, "scale": 10.35 }
+			}
+		},
+		{
+			"release": 5.3,
+			"name": "cherries-snow-laden",
+			"characterName": "hu-tao",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"storeCard": { "l": -40, "w": 120, "t": -25 },
+				"splashArt": { "x": -6.350948509485095, "y": 2.4810298102981028, "scale": 1.2 },
+				"wishCard": { "x": -82.59916156078685, "y": 57.08803611738149, "scale": 7.84 }
+			}
+		},
+		{
+			"release": 5.3,
+			"name": "new-years-cheers",
+			"characterName": "xiangling",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"splashArt": { "x": -4.253387533875339, "y": 3.2371273712737123, "scale": 1 },
+				"wishCard": { "x": -24.65011286681716, "y": 61.5801354401806, "scale": 6.99 }
+			}
+		},
+		{
+			"release": 5.8,
+			"name": "tranquil-banquet",
+			"characterName": "yelan",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"storeCard": { "l": -40, "w": 120, "t": -25 },
+				"splashArt": { "x": -1.58130081300813, "y": 2.1043360433604335, "scale": 1.47 },
+				"wishCard": { "x": -102.64430828764914, "y": 71.06772009029345, "scale": 12.02 }
+			}
+		},
+		{
+			"release": 5.8,
+			"name": "adventures-in-blazing-hue",
+			"characterName": "bennett",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"splashArt": { "x": -0.5230352303523036, "y": -0.6490514905149052, "scale": 1.24 },
+				"wishCard": { "x": -23.16027088036118, "y": 52.21896162528217, "scale": 8.42 }
+			}
+		},
+		{
+			"release": 6.3,
+			"name": "melusent-gift",
+			"characterName": "neuvillette",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"storeCard": { "l": -35, "w": 120, "t": -10 },
+				"splashArt": { "x": -1.2076502732240437, "y": 0.5259562841530054, "scale": 1.61 },
+				"wishCard": { "x": 3.6511552229092095, "y": 75.80410022779043, "scale": 12.94 }
+			}
+		},
+		{
+			"release": 6.3,
+			"name": "rainlit-bamboo-reverie",
+			"characterName": "yaoyao",
+			"rarity": 4,
+			"price": 1680,
+			"promoPrice": 1350,
+			"offset": {
+				"splashArt": { "x": -2.2431693989071038, "y": 0.778688524590164, "scale": 1.11 },
+				"wishCard": { "x": -3.270419785226163, "y": 31.760820045558084, "scale": 6.77 }
+			}
+		}
+	]
+}

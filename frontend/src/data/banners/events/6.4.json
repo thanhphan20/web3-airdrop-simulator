@@ -1,0 +1,103 @@
+{
+	"patch": 6.4,
+	"data": [
+		{
+			"phase": 1,
+			"banners": {
+				"standardVersion": 5,
+				"events": {
+					"featured": [
+						{
+							"bannerName": "the-northerly-winds-song-of-triumph-1",
+							"character": "varka",
+							"textOffset": { "l": 50.5, "b": 10.5 }
+						},
+						{
+							"bannerName": "the-lone-light-knocks-at-night-2",
+							"character": "flins",
+							"textOffset": { "l": 50.5, "b": 10.5 }
+						}
+					],
+					"rateup": ["bennett", "xiangling", "sucrose"]
+				},
+				"weapons": {
+					"bannerName": "epitome-invocation-95",
+					"fatepointsystem": true,
+					"featured": [
+						{ "name": "gest-of-the-mighty-wolf" },
+						{ "name": "bloodsoaked-ruins", "buttonPosition": { "l": 60 } }
+					],
+					"rateup": [
+						"sacrificers-staff",
+						"sacrificial-bow",
+						"favonius-greatsword",
+						"favonius-sword",
+						"sacrificial-fragments"
+					],
+					"textOffset": {
+						"featured": { "l": 42.5, "t": 70, "w": 30 },
+						"rateup": { "l": 75.5, "b": 20, "w": 20 }
+					}
+				},
+				"chronicled": {
+					"bannerName": "ode-to-the-dawn-breeze-1",
+					"region": "mondstadt",
+					"characters": {
+						"5star": ["eula", "mona", "albedo", "klee", "diluc", "jean"],
+						"4star": []
+					},
+					"weapons": {
+						"5star": [
+							"skyward-blade",
+							"aquila-favonia",
+							"song-of-broken-pines",
+							"wolf_s-gravestone",
+							"skyward-pride",
+							"skyward-spine",
+							"lost-prayer-to-the-sacred-winds",
+							"skyward-atlas",
+							"elegy-for-the-end",
+							"skyward-harp"
+						],
+						"4star": ["rust", "lion_s-roar", "rainslasher", "eye-of-perception", "dragon_s-bane"]
+					}
+				}
+			}
+		},
+		{
+			"phase": 2,
+			"banners": {
+				"standardVersion": 5,
+				"events": {
+					"featured": [
+						{
+							"bannerName": "void-stars-advent-2",
+							"character": "skirk",
+							"textOffset": { "l": 50.5, "b": 10.5 }
+						},
+						{
+							"bannerName": "la-chanson-cerise-2",
+							"character": "escoffier",
+							"textOffset": { "l": 50.5, "b": 10.5 }
+						}
+					],
+					"rateup": ["charlotte", "candace", "dahlia"]
+				},
+				"weapons": {
+					"bannerName": "epitome-invocation-96",
+					"fatepointsystem": true,
+					"featured": [
+						{ "name": "symphonist-of-scents" },
+						{ "name": "azurelight", "buttonPosition": { "l": 65 } }
+					],
+					"rateup": ["the-flute", "rust", "favonius-lance", "the-bell", "favonius-codex"],
+					"textOffset": {
+						"featured": { "l": 44, "t": 70 },
+						"rateup": { "l": 76.5, "b": 20 }
+					}
+				}
+			}
+		}
+	]
+}
+
