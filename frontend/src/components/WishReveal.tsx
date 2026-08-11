@@ -30,10 +30,10 @@ function makeMotes(glow: string): Mote[] {
   return arr;
 }
 
-export function WishReveal({ tierIdx, onContinue }: { tierIdx: number; onContinue: (tierIdx: number) => void }) {
+export function WishReveal({ tierIdx, onContinue, pityKey }: { tierIdx: number; onContinue: (tierIdx: number) => void; pityKey?: string }) {
   const [phase, setPhase] = useState<Phase>("idle");
   const [activeTier, setActiveTier] = useState(tierIdx);
-  const [odds, setOdds] = useState(() => currentOdds());
+  const [odds, setOdds] = useState(() => (pityKey ? currentOdds(pityKey) : currentOdds()));
   const [motes, setMotes] = useState<Mote[]>([]);
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
@@ -68,8 +68,8 @@ export function WishReveal({ tierIdx, onContinue }: { tierIdx: number; onContinu
   };
 
   const replay = () => {
-    const d = drawTier();
-    setOdds(currentOdds());
+    const d = pityKey ? drawTier(pityKey) : drawTier();
+    setOdds(pityKey ? currentOdds(pityKey) : currentOdds());
     begin(d.tierIdx);
   };
 

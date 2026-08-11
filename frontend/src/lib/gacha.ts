@@ -52,6 +52,9 @@ export function prob<T extends { chance: number }>(items: T[]): T {
 // ---------------------------------------------------------------------------
 
 const KEY = "mrkl_gacha_pity_v1";
+export const WISH_KEY = "mrkl_gacha_wish_pity_v1";
+export const WISH_HISTORY_KEY = "mrkl_gacha_wish_history_v1";
+export const WISH_HISTORY_MAX = 50;
 const HARD5 = 90;
 const SOFT5 = 74;
 const BASE5 = 0.6;
@@ -61,59 +64,90 @@ const BASE4 = 5.1;
 
 type PityState = { p5: number; p4: number; count: number };
 
-export function getPity(): PityState {
+export function getPity(key: string = KEY): PityState {
   try {
-    return JSON.parse(localStorage.getItem(KEY) || "") || { p5: 0, p4: 0, count: 0 };
+    return JSON.parse(localStorage.getItem(key) || "") || { p5: 0, p4: 0, count: 0 };
   } catch {
     return { p5: 0, p4: 0, count: 0 };
   }
 }
 
-function save(s: PityState) {
+function save(s: PityState, key: string = KEY) {
   try {
-    localStorage.setItem(KEY, JSON.stringify(s));
+    localStorage.setItem(key, JSON.stringify(s));
   } catch {
     /* storage unavailable */
   }
 }
 
-export function resetPity() {
-  save({ p5: 0, p4: 0, count: 0 });
+export function resetPity(key: string = KEY) {
+  save({ p5: 0, p4: 0, count: 0 }, key);
+}
+
+// Advances one pull against `s` in place and returns the tier index.
+function pull(s: PityState): number {
+  s.count++;
+  const r5 = rates({ currentPity: s.p5, maxPity: HARD5, baseRate: BASE5, rateIncreasedAt: SOFT5 });
+  if (Math.random() * 100 < r5) {
+    s.p5 = 0;
+    s.p4 += 1; // 4★ track keeps counting
+    return 3; // Legendary
+  }
+  s.p5 += 1;
+  const r4 = rates({ currentPity: s.p4, maxPity: HARD4, baseRate: BASE4, rateIncreasedAt: SOFT4 });
+  if (Math.random() * 100 < r4) {
+    s.p4 = 0;
+    return 2; // Epic
+  }
+  s.p4 += 1;
+  return prob([
+    { v: 0, chance: 78 },
+    { v: 1, chance: 22 },
+  ]).v; // Common / Rare
 }
 
 // Advances pity and returns { tierIdx, pity }.
-export function drawTier(): { tierIdx: number; pity: PityState } {
-  const s = getPity();
-  s.count++;
-  let tierIdx: number;
-
-  const r5 = rates({ currentPity: s.p5, maxPity: HARD5, baseRate: BASE5, rateIncreasedAt: SOFT5 });
-  if (Math.random() * 100 < r5) {
-    tierIdx = 3; // Legendary
-    s.p5 = 0;
-    s.p4 += 1; // 4★ track keeps counting
-  } else {
-    s.p5 += 1;
-    const r4 = rates({ currentPity: s.p4, maxPity: HARD4, baseRate: BASE4, rateIncreasedAt: SOFT4 });
-    if (Math.random() * 100 < r4) {
-      tierIdx = 2; // Epic
-      s.p4 = 0;
-    } else {
-      s.p4 += 1;
-      tierIdx = prob([
-        { v: 0, chance: 78 },
-        { v: 1, chance: 22 },
-      ]).v; // Common / Rare
-    }
-  }
-
-  save(s);
+export function drawTier(key: string = KEY): { tierIdx: number; pity: PityState } {
+  const s = getPity(key);
+  const tierIdx = pull(s);
+  save(s, key);
   return { tierIdx, pity: { ...s } };
 }
 
+// N pulls against the same pity state, saved once at the end.
+export function drawMulti(n: number, key: string = KEY): { tierIdx: number; pity: PityState }[] {
+  const s = getPity(key);
+  const results: { tierIdx: number; pity: PityState }[] = [];
+  for (let i = 0; i < n; i++) {
+    const tierIdx = pull(s);
+    results.push({ tierIdx, pity: { ...s } });
+  }
+  save(s, key);
+  return results;
+}
+
+// Last 50 pulls on the wish page, newest first (tierIdx 0-3).
+export function getWishHistory(): number[] {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(WISH_HISTORY_KEY) || "");
+    return Array.isArray(parsed) ? parsed.filter((x): x is number => typeof x === "number") : [];
+  } catch {
+    return [];
+  }
+}
+
+export function pushWishHistory(tierIdx: number): void {
+  const next = [tierIdx, ...getWishHistory()].slice(0, WISH_HISTORY_MAX);
+  try {
+    localStorage.setItem(WISH_HISTORY_KEY, JSON.stringify(next));
+  } catch {
+    /* storage unavailable */
+  }
+}
+
 // Next-pull odds, for display.
-export function currentOdds() {
-  const s = getPity();
+export function currentOdds(key: string = KEY) {
+  const s = getPity(key);
   return {
     p5: s.p5,
     p4: s.p4,
