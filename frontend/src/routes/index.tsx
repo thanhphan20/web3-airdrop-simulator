@@ -126,6 +126,9 @@ function Index() {
         <Link to="/points" style={{ fontSize: 12, textAlign: "center", color: "oklch(0.5 0.09 66)" }}>
           Points farming demo (local Anvil) →
         </Link>
+        <Link to="/wish" style={{ fontSize: 12, textAlign: "center", color: "oklch(0.5 0.09 66)" }}>
+          Gacha simulator →
+        </Link>
       </div>
     </div>
   );
