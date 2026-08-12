@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-
 interface WishResultModalProps {
   data: any;
   isMulti: boolean;
@@ -7,13 +5,6 @@ interface WishResultModalProps {
 }
 
 export function WishResultModal({ data, isMulti, onClose }: WishResultModalProps) {
-  const [showAnimation, setShowAnimation] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowAnimation(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
   const results = isMulti ? data : [data];
 
   return (
