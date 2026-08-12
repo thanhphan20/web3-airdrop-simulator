@@ -74,7 +74,7 @@ const roll = async ({ banner, WishInstance, indexOfBanner = 0 }: RollOptions): P
   }
 
   const randomItem = WishInstance.getItem(rarity, banner, indexOfBanner);
-  const { manual, wish } = owneditem.put({ itemID: randomItem.itemID });
+  const { manual, wish } = owneditem.put({ itemID: randomItem.itemID ?? 0 });
   const numberOfOwnedItem = manual + wish - 1;
   const isNew = numberOfOwnedItem < 1;
 
@@ -82,7 +82,7 @@ const roll = async ({ banner, WishInstance, indexOfBanner = 0 }: RollOptions): P
 
   const isFullConstellation = numberOfOwnedItem > 6;
   if (randomItem.type === 'character' && !isNew) {
-    (randomItem as Record<string, unknown>).stelaFortuna = !isFullConstellation;
+    randomItem.stelaFortuna = !isFullConstellation;
   }
 
   const bonusType = randomItem.rarity === 3 ? 'stardust' : 'starglitter';

@@ -3,7 +3,7 @@ import { data as weaponsDB } from '@/data/weapons.json';
 import { data as charsDB, onlyStandard } from '@/data/characters.json';
 import { getRate, prob } from './probabilities';
 import { guaranteedStatus } from './storage';
-import type { CharacterData, WeaponData, ItemWithRelease } from './types';
+import type { CharacterData, WeaponData, ItemWithRelease, WishItem } from './types';
 
 export const regionElement = (region: string): string => {
   const base: Record<string, string> = {
@@ -132,7 +132,7 @@ export const get4StarItem = ({
 };
 
 const std5StarCharlist = (stdver = 1, includes: string[] = []): CharacterData[] => {
-  const { characters: stdCharNames } = standard.find(({ version }) => version === stdver) ?? { characters: [] };
+  const { characters: stdCharNames } = standard.find(({ version }) => version === stdver) ?? { characters: [] as string[] };
   return getAllChars(5).filter(({ name }) => {
     return stdCharNames.includes(name) || includes.includes(name);
   });
@@ -140,7 +140,7 @@ const std5StarCharlist = (stdver = 1, includes: string[] = []): CharacterData[] 
 
 export const get5StarItem = ({
   banner = 'standard',
-  region = null,
+  region: _region = null,
   stdver = 1,
   type = null,
   useRateup = false,
@@ -154,20 +154,20 @@ export const get5StarItem = ({
   useRateup?: boolean;
   rateupItem?: string[];
   customData?: Record<string, unknown>;
-} = {}) => {
+} = {}): WishItem[] => {
   if (useRateup && (banner === 'character-event' || banner === 'chronicled')) {
     if (Object.keys(customData).length > 0) {
       const { vision, character, artPosition, itemID } = customData as { vision?: string; character?: string; artPosition?: unknown; itemID?: string | number };
       const result = { name: character, offset: artPosition ?? {}, type: 'character' as const };
-      return { vision, itemID, rarity: 5, custom: true, ...result };
+      return [{ vision, itemID, rarity: 5, custom: true, ...result } as WishItem];
     }
     const loadItems = type === 'weapon' ? getAllWeapons : getAllChars;
     const featured = loadItems(5).find(({ name }) => name === rateupItem[0]);
-    return featured ?? {};
+    return featured ? [featured] : [];
   }
 
   if (banner === 'chronicled') {
-    let resultList: Array<{ origin?: string; name: string }> = [];
+    let resultList: WishItem[] = [];
     if (!type || type === 'all') {
       resultList = [...std5StarCharlist(stdver, rateupItem), ...standardWeapons(5, rateupItem)];
     } else if (type === 'weapon') {
@@ -176,7 +176,7 @@ export const get5StarItem = ({
       resultList = std5StarCharlist(stdver, rateupItem);
     }
 
-    const filtered = resultList.filter(({ origin, name }) => {
+    const filtered = resultList.filter(({ name }) => {
       return rateupItem.includes(name);
     });
     return filtered;
@@ -198,7 +198,7 @@ export const get5StarItem = ({
   }
 
   if (banner === 'standard' || !banner) {
-    let resultList: (CharacterData | WeaponData)[];
+    let resultList: WishItem[];
     if (type === 'all') {
       resultList = [...std5StarCharlist(stdver), ...standardWeapons(5)];
     } else if (type === 'character') {
@@ -231,7 +231,7 @@ export const isRateup = (banner: string): boolean => {
 
 export const checkGuaranteed = (banner: string, rarity: number) => {
   const status = guaranteedStatus.get(`${banner}-${rarity}star`);
-  const guaranteedSystem = getRate(banner, 'guaranteed');
+  const guaranteedSystem = String(getRate(banner, 'guaranteed'));
   const never = guaranteedSystem === 'never';
   const always = guaranteedSystem === 'always';
   return { status, never, always };

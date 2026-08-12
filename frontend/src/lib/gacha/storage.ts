@@ -133,7 +133,7 @@ class FatepointManager {
   _version = '';
   _phase = 0;
   _banner = 'weapon-event';
-  _db: Array<{ version: string; phase: number; banner: string; point: number; type: string; selected: number | null }> = [];
+  _db: Array<{ version: string; phase: number; banner: string; point: number; type: string; selected: number | string | null }> = [];
   _recordIndex = -1;
 
   getAll() {
@@ -160,7 +160,7 @@ class FatepointManager {
     return this;
   }
 
-  set(point: number, selectedIndex: number | null, type = 'weapon') {
+  set(point: number, selectedIndex: number | string | null, type = 'weapon') {
     const { _recordIndex: i, _version: version, _phase: phase, _db: db, _banner: banner } = this;
     const newData = { version, phase, banner, point, type, selected: selectedIndex };
     if (i < 0) {

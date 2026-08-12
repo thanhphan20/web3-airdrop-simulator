@@ -2,10 +2,16 @@ import { chronicledCourse } from './appState';
 import { fatepointManager } from './storage';
 import { get3StarItem, get4StarItem, get5StarItem, rand } from './itemdrop-base';
 import { getRate, prob } from './probabilities';
+import type { WishResult } from './types';
 
 class FatepointChronicled {
   _fatepointManager = fatepointManager;
-  _info: { selected: number | null; point: number | null; type: string; banner: string } = { selected: null, point: null, type: 'weapon', banner: 'chronicled' };
+  _info: { selected: number | string | null; point: number | null; type: string | null; banner: string | null } = {
+    selected: null,
+    point: null,
+    type: 'weapon',
+    banner: 'chronicled',
+  };
 
   init({ version, phase }: { version: string; phase: number }) {
     this._fatepointManager = fatepointManager.init({ version, phase, banner: 'chronicled' });
@@ -28,7 +34,7 @@ class FatepointChronicled {
       return point === 1;
     }
 
-    _fatepointManager.set(1, selected, type);
+    _fatepointManager.set(1, selected, type ?? 'weapon');
     chronicledCourse.set({ point: 1, selected, type });
     return false;
   }
@@ -43,7 +49,7 @@ class ChronicledWish {
   _region = '';
   _epitomized = new FatepointChronicled();
 
-  init({ version, phase, stdver, characters, weapons, region }: { version: string; phase: number; stdver: number; characters: Record<string, string[]>; weapons: Record<string, string[]>; region: string } = {}) {
+  init({ version, phase, stdver, characters, weapons, region }: { version: string; phase: number; stdver: number; characters: Record<string, string[]>; weapons: Record<string, string[]>; region: string }) {
     this._version = version;
     this._phase = phase;
     this._characters = characters;
@@ -54,7 +60,7 @@ class ChronicledWish {
     return this;
   }
 
-  get(rarity: number) {
+  get(rarity: number): WishResult {
     const { _characters: ch, _weapons: wp } = this;
     if (rarity === 3) {
       const droplist = get3StarItem();
@@ -78,9 +84,9 @@ class ChronicledWish {
 
       const rateUpNameList = type === 'weapon' ? wp['5star'] : ch['5star'];
       const rateupList = rateUpNameList.filter((name) => name !== selected);
-      let useRateup = point > 0 && !!selected;
+      let useRateup = (point ?? 0) > 0 && !!selected;
 
-      if (point < 1 && !!selected) {
+      if ((point ?? 0) < 1 && !!selected) {
         const selectedRate = getRate('chronicled', 'selectedRate');
         const { item } = prob([
           { item: 'selected', chance: selectedRate },
@@ -93,7 +99,7 @@ class ChronicledWish {
         banner: 'chronicled',
         region: _region,
         stdver: _stdver,
-        rateupItem: useRateup ? [selected] : rateupList,
+        rateupItem: useRateup ? [selected as string] : rateupList,
         useRateup,
         type,
       });
@@ -102,7 +108,7 @@ class ChronicledWish {
       const isFatepointFull = _epitomized?.verify(result);
       const randomStatus = !selected ? 'unset' : 'lose';
       const fatepointstatus = isFatepointFull ? 'selected' : randomStatus;
-      result.status = point < 1 && result?.name === selected ? 'win' : fatepointstatus;
+      result.status = (point ?? 0) < 1 && result?.name === selected ? 'win' : fatepointstatus;
       return result;
     }
 

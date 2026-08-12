@@ -69,7 +69,7 @@ export const get4StarItem = ({
 
 export const getStandard5StarItem = ({ exclude }: { exclude: string[] }) => {
   const itemType = rand(['wp', 'char']);
-  const items = itemType === 'wp' ? standardWeapons(5) : standardChars5Star(exclude);
+  const items: (WeaponData | CharacterData)[] = itemType === 'wp' ? standardWeapons(5) : standardChars5Star(exclude);
   return rand(items);
 };
 

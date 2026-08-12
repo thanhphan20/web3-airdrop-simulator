@@ -1,7 +1,6 @@
 import { test, expect, beforeEach } from 'bun:test';
 import './test-setup';
 import { rates, prob, getRate, setRate } from './probabilities';
-import { localrate } from './storage';
 
 beforeEach(() => {
   localStorage.clear();

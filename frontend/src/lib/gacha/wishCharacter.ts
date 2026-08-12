@@ -1,5 +1,6 @@
 import { guaranteedStatus, rollCounter } from './storage';
 import { prob } from './probabilities';
+import type { WishResult } from './types';
 import {
   get3StarItem,
   get4StarItem,
@@ -45,7 +46,7 @@ class CharacterWish {
     return this;
   }
 
-  get(rarity: number) {
+  get(rarity: number): WishResult {
     if (rarity === 3) {
       const droplist = get3StarItem();
       return rand(droplist);

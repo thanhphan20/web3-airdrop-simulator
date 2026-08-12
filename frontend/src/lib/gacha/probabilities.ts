@@ -1,6 +1,21 @@
 import { probabilityRates } from '@/data/wish-setup.json';
 import { localrate } from './storage';
 
+type RateKey =
+  | 'baseRate5'
+  | 'max5'
+  | 'hard5'
+  | 'baseRate4'
+  | 'max4'
+  | 'hard4'
+  | 'winRate'
+  | 'radRate'
+  | 'charRate'
+  | 'selectedRate'
+  | 'guaranteed';
+
+type RateTable = Partial<Record<RateKey, number>>;
+
 export interface RateConfig {
   currentPity?: number;
   maxPity?: number;
@@ -39,19 +54,19 @@ export const prob = <T extends ProbItem>(items: T[]): T => {
   return result;
 };
 
-export const getRate = (banner: string, key: string): number => {
+export const getRate = (banner: string, key: RateKey): number => {
   if (banner === 'beginner') {
-    const initial = probabilityRates['character-event'];
+    const initial = probabilityRates['character-event'] as RateTable;
     return initial[key] ?? 0;
   }
 
-  const initial = probabilityRates[banner as keyof typeof probabilityRates];
+  const initial = probabilityRates[banner as keyof typeof probabilityRates] as RateTable | undefined;
   if (!initial) return 0;
 
-  const local = localrate.get(banner) as Record<string, unknown>;
-  if (!(local[key] ?? local[key] >= 0)) return initial[key] ?? 0;
+  const local = localrate.get(banner) as Partial<Record<RateKey, number>>;
+  if (!(local[key] ?? local[key]! >= 0)) return initial[key] ?? 0;
 
-  const val = parseFloat(local[key] as string);
+  const val = parseFloat(String(local[key]));
   if (Number.isNaN(val)) return local[key] ?? 0;
   return val ?? 0;
 };

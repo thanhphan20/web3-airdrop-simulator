@@ -9,13 +9,19 @@ import {
   checkGuaranteed,
 } from './itemdrop-base';
 import { getRate, prob } from './probabilities';
+import type { WishResult } from './types';
 
 class Fatepoint {
   _fatesystemON = false;
   _featured: Array<{ name: string }> = [];
   _version = '';
   _fatepointManager = fatepointManager;
-  _info: { selected: number | null; point: number | null; type: string; banner: string } = { selected: null, point: null, type: 'weapon', banner: 'weapon-event' };
+  _info: { selected: number | string | null; point: number | null; type: string | null; banner: string | null } = {
+    selected: null,
+    point: null,
+    type: 'weapon',
+    banner: 'weapon-event',
+  };
 
   init({ version, phase, featured, fatesystemON }: { version: string; phase: number; featured: Array<{ name: string }>; fatesystemON: boolean }) {
     this._fatesystemON = fatesystemON;
@@ -35,7 +41,7 @@ class Fatepoint {
     if (!this._fatesystemON) return null;
     const { _featured, _info, _fatepointManager, _version } = this;
     const { selected, point } = _info;
-    if (selected === null) return false;
+    if (typeof selected !== 'number') return false;
 
     const { name: resultName } = result;
     const { name: selectedWeapon } = _featured[selected];
@@ -44,11 +50,12 @@ class Fatepoint {
       _fatepointManager.remove();
       course.set({ point: 0, selected: null });
       const maxPoint = parseFloat(_version) >= 5.0 ? 1 : 2;
-      return point === maxPoint;
+      return (point ?? 0) === maxPoint;
     }
 
-    _fatepointManager.set(point + 1, selected);
-    course.set({ point: point + 1, selected });
+    const nextPoint = (point ?? 0) + 1;
+    _fatepointManager.set(nextPoint, selected);
+    course.set({ point: nextPoint, selected });
     return false;
   }
 }
@@ -60,7 +67,7 @@ class WeaponWish {
   _featured: Array<{ name: string }> = [];
   _fatesystem: ReturnType<Fatepoint['init']> = null;
 
-  init({ rateup, version, phase, featured, fatesystemON }: { rateup: string[]; version: string; phase: number; featured: Array<{ name: string }>; fatesystemON: boolean } = {}) {
+  init({ rateup, version, phase, featured, fatesystemON }: { rateup: string[]; version: string; phase: number; featured: Array<{ name: string }>; fatesystemON: boolean }) {
     this._version = version;
     this._phase = phase;
     this._rateup = rateup;
@@ -69,7 +76,7 @@ class WeaponWish {
     return this;
   }
 
-  get(rarity: number) {
+  get(rarity: number): WishResult {
     if (rarity === 3) {
       const droplist = get3StarItem();
       return rand(droplist);
@@ -102,7 +109,7 @@ class WeaponWish {
 
       if (_fatesystem) {
         const { selected, point } = _fatesystem.check();
-        calculateFatepoint = selected !== null && selected > -1;
+        calculateFatepoint = typeof selected === 'number' && selected > -1;
         let useSelected = false;
 
         if (calculateFatepoint && useRateup) {
@@ -115,9 +122,9 @@ class WeaponWish {
         }
 
         const maxPoint = parseFloat(version) >= 5.0 ? 1 : 2;
-        if (useSelected || (calculateFatepoint && point >= maxPoint)) {
+        if (useSelected || (calculateFatepoint && (point ?? 0) >= maxPoint)) {
           useRateup = true;
-          rateupItem = [rateupItem[selected]];
+          if (typeof selected === 'number') rateupItem = [rateupItem[selected]];
         }
       }
 

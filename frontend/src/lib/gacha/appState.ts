@@ -9,7 +9,7 @@ function writable<T>(initial: T) {
   };
 }
 
-export const course = writable({ selected: null, point: 0 });
-export const chronicledCourse = writable({ selected: null, type: null, point: 0 });
+export const course = writable<{ selected: number | string | null; point: number | null }>({ selected: null, point: 0 });
+export const chronicledCourse = writable<{ selected: number | string | null; type: string | null; point: number | null }>({ selected: null, type: null, point: 0 });
 export const beginnerRemaining = writable(20);
 export const showBeginner = writable(true);

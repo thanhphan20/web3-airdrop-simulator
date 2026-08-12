@@ -1,4 +1,5 @@
 import { get3StarItem, get4StarItem, get5StarItem, rand } from './itemdrop-base';
+import type { WishResult } from './types';
 
 class StandardWish {
   _stdver = 1;
@@ -12,7 +13,7 @@ class StandardWish {
     return this;
   }
 
-  get(rarity: number) {
+  get(rarity: number): WishResult {
     if (rarity === 3) {
       const droplist = get3StarItem();
       return rand(droplist);

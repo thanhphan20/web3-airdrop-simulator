@@ -1,8 +1,9 @@
 import { guaranteedStatus } from './storage';
 import { get3StarItem, get4StarItem, get5StarItem, rand } from './itemdrop-base';
+import type { WishResult } from './types';
 
 class BeginnerWish {
-  get(rarity: number) {
+  get(rarity: number): WishResult {
     const alreadyGetFeatured = guaranteedStatus.get('beginner');
 
     if (rarity === 3) {
