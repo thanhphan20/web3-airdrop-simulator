@@ -568,6 +568,7 @@
 		"showAllOption": "Hiện tất cả {item} vật phẩm"
 	},
 	"menu": {
+		"wallet": "Ví",
 		"no": "Không",
 		"yes": "Có",
 		"text": "Menu",

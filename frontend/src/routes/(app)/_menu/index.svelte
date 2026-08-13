@@ -14,6 +14,7 @@
 	import ProAccess from './ProAccess.svelte';
 	import CustomBanner from './CustomBanner.svelte';
 	import BackupRestore from './BackupRestore.svelte';
+	import Wallet from './Wallet.svelte';
 
 	let activeContent = $editorMode ? 'customBanner' : 'options';
 
@@ -47,7 +48,9 @@
 		<Sidebar {activeContent} />
 
 		<div class="content">
-			{#if activeContent === 'options'}
+			{#if activeContent === 'wallet'}
+				<Wallet />
+			{:else if activeContent === 'options'}
 				<Options />
 			{:else if activeContent === 'updates'}
 				<Updates />

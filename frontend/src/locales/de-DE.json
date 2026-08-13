@@ -568,6 +568,7 @@
 		"showAllOption": "Zeige alle {item}s"
 	},
 	"menu": {
+		"wallet": "Brieftasche",
 		"no": "Nein",
 		"yes": "Ja",
 		"text": "Menü",

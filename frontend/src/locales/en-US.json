@@ -568,6 +568,7 @@
 		"showAllOption": "Show All {item}s"
 	},
 	"menu": {
+		"wallet": "Wallet",
 		"no": "No",
 		"yes": "Yes",
 		"text": "Menu",

@@ -569,6 +569,7 @@
 		"showAllOption": "모든 {item} 보기"
 	},
 	"menu": {
+		"wallet": "지갑",
 		"no": "아니요",
 		"yes": "예",
 		"text": "메뉴",

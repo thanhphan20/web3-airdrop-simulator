@@ -568,6 +568,7 @@
 		"showAllOption": "Показать всех {item}"
 	},
 	"menu": {
+		"wallet": "Кошелёк",
 		"no": "Нет",
 		"yes": "Да",
 		"text": "Меню",

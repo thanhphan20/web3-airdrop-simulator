@@ -568,6 +568,7 @@
 		"showAllOption": "全ての{item}を表示"
 	},
 	"menu": {
+		"wallet": "ウォレット",
 		"no": "オフ",
 		"yes": "オン",
 		"text": "メニュー",

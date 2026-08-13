@@ -568,6 +568,7 @@
 		"showAllOption": "显示所有{item}"
 	},
 	"menu": {
+		"wallet": "钱包",
 		"no": "否",
 		"yes": "是",
 		"text": "菜单",

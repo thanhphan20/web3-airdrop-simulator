@@ -568,6 +568,7 @@
 		"showAllOption": "Tampilkan Semua {item}"
 	},
 	"menu": {
+		"wallet": "Dompet",
 		"no": "Tidak",
 		"yes": "Ya",
 		"text": "Menu",

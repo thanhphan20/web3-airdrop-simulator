@@ -568,6 +568,7 @@
 		"showAllOption": "Mostrar todos os Personagens"
 	},
 	"menu": {
+		"wallet": "Carteira",
 		"no": "Não",
 		"yes": "Sim",
 		"text": "Menu",

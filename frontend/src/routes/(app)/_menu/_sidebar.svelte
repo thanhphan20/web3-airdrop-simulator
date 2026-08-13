@@ -9,6 +9,10 @@
 
 <div class="sidebar">
 	<div class="menu-list" style="--bg-active: url('/menu-active.png')">
+		<div class="menu-item" class:active={activeContent === 'wallet'}>
+			<button on:click={() => selectMenu('wallet')}> {$t('menu.wallet')} </button>
+		</div>
+
 		<div class="menu-item" class:active={activeContent === 'options'}>
 			<button on:click={() => selectMenu('options')}> {$t('menu.options')} </button>
 		</div>

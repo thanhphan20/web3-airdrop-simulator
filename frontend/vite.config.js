@@ -114,7 +114,14 @@ const config = {
 	},
 	build: {
 		chunkSizeWarningLimit: 350,
-		target: ['es2020']
+		// es2022+ required by viem/ox (BigInt literals); the old es2020/safari13
+		// baseline made esbuild refuse to optimize node_modules/ox
+		target: ['es2022']
+	},
+	optimizeDeps: {
+		esbuildOptions: {
+			target: 'es2022'
+		}
 	}
 };
 

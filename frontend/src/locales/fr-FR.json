@@ -568,6 +568,7 @@
 		"showAllOption": "Afficher tous/toutes les {item}s"
 	},
 	"menu": {
+		"wallet": "Portefeuille",
 		"no": "Non",
 		"yes": "Oui",
 		"text": "Menu",

@@ -185,10 +185,6 @@
 	>
 		WishSimulator.App
 	</a>
-	<nav class="site-nav">
-		<a href="/claim" on:click|preventDefault={() => window.location.assign('/claim')}>Claim</a>
-		<a href="/points" on:click|preventDefault={() => window.location.assign('/points')}>Points</a>
-	</nav>
 </main>
 
 <style global>
@@ -277,24 +273,4 @@
 		bottom: 1rem;
 	}
 
-	.site-nav {
-		position: fixed;
-		bottom: 8px;
-		right: 50%;
-		transform: translateX(50%);
-		z-index: 9999;
-		display: flex;
-		gap: 1rem;
-		font-family: Roboto, sans-serif;
-		font-size: 12px;
-	}
-	.site-nav a {
-		color: #fff;
-		text-shadow: 0 0 1.5px rgba(0, 0, 0, 0.7);
-		opacity: 0.75;
-		transition: opacity 0.2s;
-	}
-	.site-nav a:hover {
-		opacity: 1;
-	}
 </style>

@@ -6,3 +6,6 @@ bot/output/
 node_modules/
 frontend/dist/
 .gstack/
+.omo/
+.playwright-mcp/
+lib/Genshin-Impact-Wish-Simulator/
