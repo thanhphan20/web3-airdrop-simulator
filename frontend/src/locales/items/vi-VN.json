@@ -1,0 +1,583 @@
+{
+	"a-thousand-blazing-suns": "Thiên Dương Rực Lửa",
+	"a-thousand-floating-dreams": "Cõi Mộng Ngàn Đêm",
+	"absolution": "Xá Tội",
+	"akuoumaru": "Akuoumaru",
+	"alley-hunter": "Thợ Săn Hẻm Tối",
+	"amos-bow": "Cung Amos",
+	"angelos-heptades": "Trần Quang Thất Dụ",
+	"astral-vultures-crimson-plumage": "Xích Vũ Tinh Tựu",
+	"aqua-simulacra": "Nhược Thủy",
+	"aquila-favonia": "Phong Ưng Kiếm",
+	"athame-artis": "Hắc Ám Xâm Thực",
+	"azurelight": "Thương Diệu",
+	"beacon-of-the-reed-sea": "Hải Đăng Bờ Biển Lau",
+	"black-tassel": "Hắc Anh Thương",
+	"bloodsoaked-ruins": "Tàn Tích Nhuốm Máu",
+	"bloodtained-greatsword": "Kiếm Huyết Rồng",
+	"calamity-queller": "Hủy Diệt",
+	"cashflow-supervision": "Quản Đốc Vàng Ròng",
+	"cool-steel": "Lãnh Nhẫn",
+	"cranes-echoing-call": "Dư Âm Tiếng Hạc",
+	"crimson_moon_s-semblance": "Hình Thái Xích Nguyệt",
+	"dawning-frost": "Sương Mai",
+	"debate-club": "Gậy Thu Phục",
+	"disaster-and-remorse": "Tai Họa Và Hối Hận",
+	"dragon_s-bane": "Tai Ương Của Rồng",
+	"elegy-for-the-end": "Tiếng Thở Dài Vô Tận",
+	"emerald-orb": "Quả Cầu Ngọc",
+	"engulfing-lightning": "Đoạn Thảo Trường Đao",
+	"everlasting-moonglow": "Vầng Trăng Bất Diệt",
+	"eye-of-perception": "Chiêu Tâm",
+	"fang-of-the-mountain-king": "Nanh Sơn Vương",
+	"favonius-codex": "Tây Phong Mật Điển",
+	"favonius-greatsword": "Đại Kiếm Tây Phong",
+	"favonius-lance": "Thương Tây Phong",
+	"favonius-sword": "Tây Phong Kiếm",
+	"favonius-warbow": "Cung Tây Phong",
+	"ferrous-shadow": "Kiếm Thiết Ảnh",
+	"flower-wreathed-feathers": "Lông Vũ Thêu Hoa",
+	"fractured-halo": "Hào Quang Tách Rời",
+	"freedom-sworn": "Lời Thề Tự Do Cổ Xưa",
+	"fruitful-hook": "Móc Trĩu Quả",
+	"gest-of-the-mighty-wolf": "Chiến Hùng Ca Của Sói",
+	"golden-frostbound-oath": "Lời Thề Vàng Sương Giá",
+	"haran-geppaku-futsu": "Haran Geppaku Futsu",
+	"harbinger-of-dawn": "Thần Kiếm Lê Minh",
+	"hunter_s-path": "Con Đường Thợ Săn",
+	"jadefall-splendor": "Ngọc Bích Huy Hoàng",
+	"kagura_s-verity": "Chân Ý Của Kagura",
+	"key-of-khaj-nisut": "Chìa Khóa Khaj-Nisut",
+	"lightbearing-moonshard": "Mảnh Trăng Ánh Sáng",
+	"lion_s-roar": "Tiếng Hét Của Rồng",
+	"light-of-foliar-incision": "Ánh Lá Phán Quyết",
+	"lithic-blade": "Thiên Nham Cổ Kiếm",
+	"lithic-spear": "Thương Thiên Nham",
+	"lost-prayer-to-the-sacred-winds": "Điển Tích Tây Phong",
+	"lumidouce-elegy": "Bi Ca Lumidouce",
+	"magic-guide": "Tóm Tắt Ma Pháp",
+	"makhaira-aquamarine": "Sắc Nước Makhaira",
+	"memory-of-dust": "Khóa Trần Thế",
+	"mistsplitter-reforged": "Ánh Sáng Đêm Sương Mù",
+	"mitternachts-waltz": "Điệu Van Ban Đêm",
+	"moonweavers-dawn": "Bình Minh Của Người Dệt Trăng",
+	"mountain-bracing-bolt": "Mũi Đinh Trấn Núi",
+	"mouun_s-moon": "Ánh Trăng Mouun",
+	"nightweavers-looking-glass": "Kính Dệt Màn Đêm",
+	"nocturnes-curtain-call": "Dạ Khúc Hạ Màn",
+	"peak-patrol-song": "Khúc Ca Núi Đá",
+	"polar-star": "Ngôi Sao Cực Đông",
+	"portable-power-saw": "Máy Cưa Cầm Tay",
+	"primordial-jade-cutter": "Bàn Nham Kết Lục",
+	"primordial-jade-winged-spear": "Hòa Phác Diên",
+	"prospector-drill": "Mũi Khoan Thăm Dò",
+	"rainslasher": "Vũ Tài",
+	"range-gauge": "Máy Đo Cự Ly",
+	"raven-bow": "Cung Lông Vịt",
+	"redhorn-stonethresher": "Xích Giác Phá Thạch Đao",
+	"reliquary-of-truth": "Chân Ngôn Bí Hạp",
+	"rust": "Cung Rỉ Sét",
+	"sacrificial-bow": "Cung Tế Lễ",
+	"sacrificial-fragments": "Mảnh Chương Tế Lễ",
+	"sacrificial-greatsword": "Đại Kiếm Tế Lễ",
+	"sacrificial-sword": "Kiếm Tế Lễ",
+	"sacrificers-staff": "Quyền Trượng Kẻ Thánh Tế",
+	"sharpshooter_s-oath": "Lời Thề Xạ Thủ Thần",
+	"silvershower-heartstrings": "Màn Mưa Tơ Lòng",
+	"skyrider-sword": "Kiếm Phi Thiên",
+	"skyward-atlas": "Quyển Thiên Không",
+	"skyward-blade": "Thiên Không Kiếm",
+	"skyward-harp": "Cánh Thiên Không",
+	"skyward-pride": "Thiên Không Kiêu Ngạo",
+	"skyward-spine": "Xương Sống Thiên Không",
+	"slingshot": "Nỏ Kéo",
+	"song-of-broken-pines": "Tiếng Gió Trong Rừng Thông",
+	"splendor-of-tranquil-waters": "Sắc Nước Lộng Lẫy",
+	"staff-of-homa": "Trượng Hộ Ma",
+	"staff-of-the-scarlet-sands": "Quyền Trượng Cát Đỏ",
+	"starcallers-watch": "Ánh Nhìn Tư Tế",
+	"sturdy-bone": "Xương Cứng",
+	"summit-shaper": "Kiếm Chước Phong",
+	"sunny-morning-sleep-in": "Hòa Giấc Trong Nắng Mai",
+	"surfs-up": "Thời Khắc Lướt Sóng",
+	"symphonist-of-scents": "Nhạc Sĩ Hương Thơm",
+	"the-alley-flash": "Tia Sáng Nơi Hẻm Tối",
+	"the-bell": "Kiếm Chuông",
+	"the-daybreak-chronicles": "Biên Niên Sử Bình Minh",
+	"the-dockhands-assistant": "Kiếm Bến Tàu",
+	"the-first-great-magic": "Màn Ảo Thuật Đầu Tiên",
+	"the-flute": "Kiếm Sáo",
+	"the-stringless": "Tuyệt Huyền",
+	"the-unforged": "Kiếm Vô Công",
+	"the-widsith": "Chương Nhạc Lang Thang",
+	"thrilling-tales-of-dragon-slayers": "Câu Chuyện Diệt Rồng",
+	"thundering-pulse": "Sấm Sét Rung Động",
+	"tome-of-the-eternal-flow": "Nghi Thức Dòng Chảy Vĩnh Hằng",
+	"tulaytullah_s-remembrance": "Hồi Ức Tulaytullah",
+	"uraku-misugiri": "Uraku Misugiri",
+	"verdict": "Phán Quyết",
+	"vivid-notions": "Tâm Niệm Sắc Màu",
+	"vortex-vanquisher": "Giáo Nịnh Thần",
+	"wavebreaker_s-fin": "Vây Cá Chẻ Sóng",
+	"wandering-evenstar": "Sao Đêm Rong Ruổi",
+	"waveriding-whirl": "Vòng Xoáy Cưỡi Sóng",
+	"wine-and-song": "Rượu Và Thơ Nơi Hẻm Tối",
+	"wolf_s-gravestone": "Đường Cùng Của Sói",
+	"xiphos-moonlight": "Ánh Trăng Xiphos",
+	"aino": {
+		"name": "Aino",
+		"title": "Clinky-Clank Diệu Kỳ"
+	},
+	"albedo": {
+		"name": "Albedo",
+		"title": "Kreideprinz"
+	},
+	"alhaitham": {
+		"name": "Alhaitham",
+		"title": "Lời Khuyên Tận Tình"
+	},
+	"amber": {
+		"name": "Amber",
+		"title": "Quán Quân Bay Lượn"
+	},
+	"arataki-itto": {
+		"name": "Arataki Itto",
+		"title": "Quái Kiệt Hanamizaka"
+	},
+	"arlecchino": {
+		"name": "Arlecchino",
+		"title": "Vầng Trăng Tai Họa"
+	},
+	"baizhu": {
+		"name": "Baizhu",
+		"title": "Sinh Tử Giao Hòa"
+	},
+	"barbara": {
+		"name": "Barbara",
+		"title": "Thần Tượng Tỏa Sáng"
+	},
+	"beidou": {
+		"name": "Beidou",
+		"title": "Long Vương Không Vương Miện"
+	},
+	"bennett": {
+		"name": "Bennett",
+		"title": "Thử Thách Của Lửa"
+	},
+	"candace": {
+		"name": "Candace",
+		"title": "Thề Nguyện Ánh Kim"
+	},
+	"charlotte": {
+		"name": "Charlotte",
+		"title": "Ống Kính Sự Thật"
+	},
+	"chasca": {
+		"name": "Chasca",
+		"title": "Phán Quyết Trên Cao"
+	},
+	"chevreuse": {
+		"name": "Chevreuse",
+		"title": "Người Thực Thi Công Lý"
+	},
+	"chiori": {
+		"name": "Chiori",
+		"title": "Nhà Thiết Kế Sấm Chớp"
+	},
+	"chongyun": {
+		"name": "Chongyun",
+		"title": "Bòng Hình Băng Giá"
+	},
+	"citlali": {
+		"name": "Citlali",
+		"title": "Tinh Tú Obsidian"
+	},
+	"clorinde": {
+		"name": "Clorinde",
+		"title": "Thắp Nến Diệt Bóng Tối"
+	},
+	"collei": {
+		"name": "Collei",
+		"title": "Mầm Non Tái Sinh"
+	},
+	"columbina": {
+		"name": "Columbina",
+		"title": "Không Nguyệt Trở Về"
+	},
+	"cyno": {
+		"name": "Cyno",
+		"title": "Phán Quyết Ẩn Mật"
+	},
+	"dahlia": {
+		"name": "Dahlia",
+		"title": "Hoan Ca Tế Lễ"
+	},
+	"dehya": {
+		"name": "Dehya",
+		"title": "Sư Tử Lửa"
+	},
+	"diluc": {
+		"name": "Diluc",
+		"title": "Mặt Tối Của Bình Minh"
+	},
+	"diona": {
+		"name": "Diona",
+		"title": "Đặc Chế Quán Rượu Đuôi Mèo"
+	},
+	"dori": {
+		"name": "Dori",
+		"title": "Kho Báu Vườn Mơ"
+	},
+	"durin": {
+		"name": "Durin",
+		"title": "“Ngọn Lửa Bất Diệt”"
+	},
+	"emilie": {
+		"name": "Emilie",
+		"title": "Muôn Ngàn Hương Thơm"
+	},
+	"escoffier": {
+		"name": "Escoffier",
+		"title": "Muôn Hương Hòa Quyện"
+	},
+	"eula": {
+		"name": "Eula",
+		"title": "Vũ Điệu Bọt Biển"
+	},
+	"faruzan": {
+		"name": "Faruzan",
+		"title": "Người Giải Bí Ẩn"
+	},
+	"fischl": {
+		"name": "Fischl",
+		"title": "Công Chúa Định Tội"
+	},
+	"flins": {
+		"name": "Flins",
+		"title": "Kỳ Ảnh Bên Đèn"
+	},
+	"freminet": {
+		"name": "Freminet",
+		"title": "Khát Khao Chìm Đắm"
+	},
+	"furina": {
+		"name": "Furina",
+		"title": "Độc Diễn Vô Tận"
+	},
+	"gaming": {
+		"name": "Gaming",
+		"title": "Tuấn Nghê Ngẩng Đầu"
+	},
+	"ganyu": {
+		"name": "Ganyu",
+		"title": "Người Bảo Vệ Tận Tâm"
+	},
+	"gorou": {
+		"name": "Gorou",
+		"title": "Chiến Khuyển Nanh Nhọn"
+	},
+	"hu-tao": {
+		"name": "Hu Tao",
+		"title": "Tuyết Tễ Mai Hương"
+	},
+	"iansan": {
+		"name": "Iansan",
+		"title": "Phôi Đá Bách Luyện"
+	},
+	"ifa": {
+		"name": "Ifa",
+		"title": "Gió Xanh Dẫn Lối"
+	},
+	"illuga": {
+		"name": "Illuga",
+		"title": "Đốm Lửa Đêm Ác Mộng"
+	},
+	"ineffa": {
+		"name": "Ineffa",
+		"title": "Sóng Điện Rền Vang"
+	},
+	"jahoda": {
+		"name": "Jahoda",
+		"title": "Bóng Hình Đan Gió"
+	},
+	"jean": {
+		"name": "Jean",
+		"title": "Kỵ Sĩ Bồ Công Anh"
+	},
+	"kachina": {
+		"name": "Kachina",
+		"title": "Khoáng Thạch Ánh Vàng"
+	},
+	"kaedehara-kazuha": {
+		"name": "Kaedehara Kazuha",
+		"title": "Lá Đỏ Đuổi Sóng"
+	},
+	"kaeya": {
+		"name": "Kaeya",
+		"title": "Hàn Phong Kiếm Sĩ"
+	},
+	"kamisato-ayaka": {
+		"name": "Kamisato Ayaka",
+		"title": "Bạch Hạc Sương Hoa"
+	},
+	"kamisato-ayato": {
+		"name": "Kamisato Ayato",
+		"title": "Trụ Cột Vững Vàng"
+	},
+	"kaveh": {
+		"name": "Kaveh",
+		"title": "Lăng Kính Vòm Trời"
+	},
+	"keqing": {
+		"name": "Keqing",
+		"title": "Sấm Chớp Trước Cơn Mưa"
+	},
+	"kinich": {
+		"name": "Kinich",
+		"title": "Thợ Săn Hồi Hỏa"
+	},
+	"kirara": {
+		"name": "Kirara",
+		"title": "Mèo Leo Nóc Nhà"
+	},
+	"klee": {
+		"name": "Klee",
+		"title": "Mặt Trời Chạy Trốn"
+	},
+	"kujou-sara": {
+		"name": "Kujou Sara",
+		"title": "Hắc Vũ Tiễn"
+	},
+	"kuki-shinobu": {
+		"name": "Kuki Shinobu",
+		"title": "Gạt Bỏ Phiền Não"
+	},
+	"lan-yan": {
+		"name": "Lan Yan",
+		"title": "Cắt Ngọc Đan Xuân"
+	},
+	"lauma": {
+		"name": "Lauma",
+		"title": "Tế Ca Vĩnh Nguyệt"
+	},
+	"layla": {
+		"name": "Layla",
+		"title": "Sao Đêm Kỳ Ảo"
+	},
+	"linnea": {
+		"name": "Linnea",
+		"title": "Lữ Khách Uyên Bác"
+	},
+	"lisa": {
+		"name": "Lisa",
+		"title": "Ma Nữ Tường Vi"
+	},
+	"lohen": {
+		"name": "Lohen",
+		"title": "Mũi Nhọn Sắc Bén"
+	},
+	"lynette": {
+		"name": "Lynette",
+		"title": "Bóng Hình Trang Nhã"
+	},
+	"lyney": {
+		"name": "Lyney",
+		"title": "Ảo Ảnh Ngoạn Mục"
+	},
+	"mavuika": {
+		"name": "Mavuika",
+		"title": "Lửa Thiêu Đêm Đen"
+	},
+	"mika": {
+		"name": "Mika",
+		"title": "Dấu Hiệu Sương Mai"
+	},
+	"mona": {
+		"name": "Mona",
+		"title": "Thủy Kính Thiên Tinh"
+	},
+	"mualani": {
+		"name": "Mualani",
+		"title": "Người Đuổi Theo Sóng"
+	},
+	"nahida": {
+		"name": "Nahida",
+		"title": "Kết Tinh Bạch Thảo"
+	},
+	"navia": {
+		"name": "Navia",
+		"title": "Bánh Lái Hoa Lệ"
+	},
+	"nefer": {
+		"name": "Nefer",
+		"title": "Bí Mật Cát Phủ"
+	},
+	"neuvillette": {
+		"name": "Neuvillette",
+		"title": "Tiếng Sóng Phán Quyết"
+	},
+	"nicole": {
+		"name": "Nicole",
+		"title": "Huyên Náo Trong Tim"
+	},
+	"nilou": {
+		"name": "Nilou",
+		"title": "Vũ Điệu Ánh Sen"
+	},
+	"ningguang": {
+		"name": "Ningguang",
+		"title": "Yểm Nguyệt Thiên Quyền"
+	},
+	"noelle": {
+		"name": "Noelle",
+		"title": "Đóa Hoa Chưa Vinh Danh"
+	},
+	"ororon": {
+		"name": "Ororon",
+		"title": "Làn Khói U Ám"
+	},
+	"prune": {
+		"name": "Prune",
+		"title": "Giấc Mơ Trẻ Thơ"
+	},
+	"qiqi": {
+		"name": "Qiqi",
+		"title": "Đêm Hồn Về Lạnh Giá"
+	},
+	"raiden-shogun": {
+		"name": "Raiden Shogun",
+		"title": "Nhất Tâm Tịnh Thổ"
+	},
+	"razor": {
+		"name": "Razor",
+		"title": "Thiếu Niên Sói"
+	},
+	"rosaria": {
+		"name": "Rosaria",
+		"title": "Ân Điền Mũ Gai"
+	},
+	"sangonomiya-kokomi": {
+		"name": "Sangonomiya Kokomi",
+		"title": "Trí Tuệ Trân Châu"
+	},
+	"sayu": {
+		"name": "Sayu",
+		"title": "Ninja Mujina"
+	},
+	"sethos": {
+		"name": "Sethos",
+		"title": "Thước Đo Trí Tuệ"
+	},
+	"shenhe": {
+		"name": "Shenhe",
+		"title": "Thiên Thể Cô Độc"
+	},
+	"shikanoin-heizou": {
+		"name": "Shikanoin Heizou",
+		"title": "Con Tim Giao Hòa"
+	},
+	"sigewinne": {
+		"name": "Sigewinne",
+		"title": "Long Nữ Diệu Biến"
+	},
+	"skirk": {
+		"name": "Skirk",
+		"title": "Ánh Sao Hư Không"
+	},
+	"sucrose": {
+		"name": "Sucrose",
+		"title": "Độ Ngọt Vô Hại"
+	},
+	"tartaglia": {
+		"name": "Tartaglia",
+		"title": "Childe"
+	},
+	"thoma": {
+		"name": "Thoma",
+		"title": "Người Bảo Vệ Phương Xa"
+	},
+	"tighnari": {
+		"name": "Tighnari",
+		"title": "Dạo Bước Rừng Xanh"
+	},
+	"varesa": {
+		"name": "Varesa",
+		"title": "Sức Mạnh Nhàn Nhã"
+	},
+	"varka": {
+		"name": "Varka",
+		"title": "Kỵ Sĩ Bắc Phong"
+	},
+	"venti": {
+		"name": "Venti",
+		"title": "Nhà Thơ Có Màu Của Gió"
+	},
+	"wanderer": {
+		"name": "Kẻ Lang Thang",
+		"title": "Đoạn Tuyệt Thế Gian"
+	},
+	"wriothesley": {
+		"name": "Wriothesley",
+		"title": "Sứ Giả Tội Danh Ẩn Mật"
+	},
+	"xiangling": {
+		"name": "Xiangling",
+		"title": "Vạn Dân Bách Vị"
+	},
+	"xianyun": {
+		"name": "Xianyun",
+		"title": "Hạc Sứ Cõi Tiên"
+	},
+	"xiao": {
+		"name": "Xiao",
+		"title": "Hộ Pháp Dạ Xoa"
+	},
+	"xilonen": {
+		"name": "Xilonen",
+		"title": "Lửa Nung Đúc Hồn"
+	},
+	"xingqiu": {
+		"name": "Xingqiu",
+		"title": "Tuổi Trẻ Tài Cao"
+	},
+	"xinyan": {
+		"name": "Xinyan",
+		"title": "Giai Điệu Nóng Bỏng"
+	},
+	"yae-miko": {
+		"name": "Yae Miko",
+		"title": "Tiếu Ngạo Thế Gian"
+	},
+	"yanfei": {
+		"name": "Yanfei",
+		"title": "Cơ Trí Ngây Thơ"
+	},
+	"yaoyao": {
+		"name": "Yaoyao",
+		"title": "Nhụy Hoa Hoạt Bát"
+	},
+	"yelan": {
+		"name": "Yelan",
+		"title": "Lan Sinh U Cốc"
+	},
+	"yoimiya": {
+		"name": "Yoimiya",
+		"title": "Vũ Điệu Bão Lửa"
+	},
+	"yumemizuki-mizuki": {
+		"name": "Yumemizuki Mizuki",
+		"title": "Ảo Mộng Trùng Điệp"
+	},
+	"yun-jin": {
+		"name": "Yun Jin",
+		"title": "Mỹ Nhân Trên Sân Khấu"
+	},
+	"zhongli": {
+		"name": "Zhongli",
+		"title": "Nham Vương Đế Quân"
+	},
+	"zibai": {
+		"name": "Zibai",
+		"title": "Ngựa Phi Suối Chảy"
+	}
+}
