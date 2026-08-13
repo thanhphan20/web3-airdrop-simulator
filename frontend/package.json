@@ -63,5 +63,8 @@
 		"svelte-i18n": "3.4.0",
 		"viem": "^2",
 		"zoomist": "^2.0.10"
+	},
+	"overrides": {
+		"typescript": "4.9.5"
 	}
 }
