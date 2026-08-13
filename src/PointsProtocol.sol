@@ -2,7 +2,7 @@
 pragma solidity 0.8.35;
 
 /// @notice Educational simulation of an airdrop-farming "points" protocol
-/// (testnet learning project, no real value — see SPEC.md).
+/// (testnet learning project, no real value).
 /// @dev checkIn()/completeTask() are gated on msg.sender (proof-of-activity
 /// by a specific wallet) — unlike MerkleAirdrop.claim(), which takes
 /// `account` as a parameter because a merkle proof gates it instead.

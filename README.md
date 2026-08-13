@@ -1,114 +1,53 @@
-# web3-airdrop-simulator
+# Genshin-Impact-Style Wish Simulator
 
-A testnet-only learning project for understanding how merkle-tree airdrop claim
-systems actually work (the pattern Uniswap's original UNI airdrop used) — not a
-real token launch. No mainnet deployment, no real value, no real users. See
-[SPEC.md](SPEC.md) for the full design rationale and [AGENTS.md](AGENTS.md) for
-conventions if you're an AI agent (or a person) picking this repo back up.
+A Genshin-Impact-style wish (gacha) simulator with a light web3 layer on top:
+connect a wallet from the Paimon menu and your address is available to the app,
+but every wish, banner, pity counter, and inventory item lives in your browser.
+Nothing goes on-chain, no real money, no mainnet.
 
-## What's here
+The gacha core is a port of the
+[Genshin-Impact-Wish-Simulator](https://github.com/AguzzTN54/Genshin-Impact-Wish-Simulator),
+rewritten in SvelteKit. It ships as a landscape-optimized PWA.
 
-- **Contracts** (`src/`) — `TestToken.sol` (a plain mintable ERC20) and
-  `MerkleAirdrop.sol` (the claim contract: verifies a merkle proof, prevents
-  double-claiming, transfers the token).
-- **Tests** (`test/`) — full coverage including invalid-proof, double-claim,
-  wrong-amount, and wrong-account cases, plus a fuzz test.
-- **Merkle generation** (`merkle/`) — a Node script that builds the merkle
-  tree from a fake eligibility list and outputs the root + per-address proofs.
-- **Deploy scripts** (`script/`) — Foundry scripts for Sepolia.
-- **Frontend** (`frontend/`) — a minimal claim page: React + Vite + TanStack
-  Router + wagmi/viem + shadcn/ui.
-
-## Architecture
-
-```mermaid
-flowchart LR
-    E["merkle/eligibility.json\n(fake address -> amount)"] --> G["generate-merkle-tree.mjs"]
-    G --> R["merkle-root.json"]
-    G --> P["merkle-proofs.json"]
-
-    R --> D["DeployAirdrop.s.sol"]
-    D --> C["MerkleAirdrop.sol\n(Sepolia)"]
-
-    P --> F["frontend/src/data\n(bundled, no backend)"]
-    F --> UI["ClaimCard.tsx"]
-    UI -- "claim(account, amount, proof)" --> C
-    C -- "Claimed event" --> UI
-```
-
-Only a `bytes32` root and a per-address `hasClaimed` flag ever live on-chain —
-the full eligibility list stays off-chain as static JSON. See
-[SPEC.md](SPEC.md) for why.
-
-## Prerequisites
-
-- [Foundry](https://book.getfoundry.sh/getting-started/installation) (`forge`, `anvil`, `cast`)
-- [Bun](https://bun.sh) 1.3+ (package manager and runtime for `merkle/` and `frontend/`)
-
-## Getting the code
-
-`lib/` (forge-std, OpenZeppelin) is fetched as git submodules, not committed:
-
-```shell
-git clone --recurse-submodules git@github.com:thanhphan20/web3-airdrop-simulator.git
-# or, if already cloned:
-git submodule update --init --recursive
-```
-
-## Contracts: build, test, local dry run
-
-```shell
-forge build
-forge test -vv
-```
-
-Generate the merkle tree from the fake eligibility list:
-
-```shell
-cd merkle
-bun install
-bun run generate   # writes output/merkle-root.json and output/merkle-proofs.json
-```
-
-Local end-to-end dry run on Anvil (no real ETH needed):
-
-```shell
-anvil   # in a separate terminal
-
-# from the project root, with anvil running:
-forge create src/TestToken.sol:TestToken --rpc-url http://127.0.0.1:8545 \
-  --private-key <anvil_default_key> --broadcast \
-  --constructor-args "Airdrop Test Token" "ATT" 1000000000000000000000000
-
-forge create src/MerkleAirdrop.sol:MerkleAirdrop --rpc-url http://127.0.0.1:8545 \
-  --private-key <anvil_default_key> --broadcast \
-  --constructor-args <token_address> <merkle_root>
-```
-
-## Deploying to Sepolia
-
-Never commit real secrets — `.env` is gitignored.
-
-```shell
-cp .env.example .env
-# fill in SEPOLIA_RPC_URL and PRIVATE_KEY (a funded Sepolia testnet key only)
-
-forge script script/DeployToken.s.sol --rpc-url $SEPOLIA_RPC_URL --broadcast
-# note the printed token address, set TOKEN_ADDRESS in .env
-
-forge script script/DeployAirdrop.s.sol --rpc-url $SEPOLIA_RPC_URL --broadcast
-# this also funds the airdrop contract with the full tokenTotal
-```
-
-## Frontend
+## Get started
 
 ```shell
 cd frontend
 bun install
-cp .env.local.example .env.local
-# fill in VITE_TOKEN_ADDRESS and VITE_AIRDROP_ADDRESS from the deploy step above
 bun run dev
 ```
 
-Connect an eligible wallet (see `merkle/eligibility.json`) via MetaMask on
-Sepolia to check eligibility and claim.
+Open the printed URL in landscape orientation. `bun run build` produces a
+production build (PWA, `fullscreen` display mode), `bun run preview` serves it,
+`bun run check` runs `svelte-check`. The package manager is [Bun](https://bun.sh).
+
+## What it does
+
+- **Wish pulls** with the real Genshin pity and probability rules, applied per
+  banner (character event, weapon event, beginner, standard).
+- **Banners and inventory** with full detail pages, plus a shop and settings
+  for language, currency, and roll amounts.
+- **Custom banners** and the ability to share them.
+- **Local persistence** via localStorage and IndexedDB: no account, no backend.
+- **PWA** installable, fullscreen, landscape-first.
+
+## The web3 layer
+
+Open the Paimon menu, then **Wallet**. Two ways to connect:
+
+- **Connect Wallet** uses `window.ethereum` (MetaMask or any injected wallet)
+  through `viem`. It requests your address only: no signature, no transaction.
+- **Simulate Connect Wallet** signs in with a fixed demo address, so you can
+  try the flow without a wallet extension.
+
+Connect-only by design: the address feeds a reactive store
+(`frontend/src/lib/web3/wallet.js`) that the rest of the app can read. There are
+no env variables or network dependencies involved.
+
+## Repo layout
+
+| Path | What |
+|---|---|
+| `frontend/` | The app: SvelteKit port of the wish simulator (Bun, SvelteKit, viem) |
+| `lib/Genshin-Impact-Wish-Simulator/` | Vendored upstream source, kept as a reference copy (gitignored) |
+| `src/`, `test/`, `script/`, `merkle/`, `bot/` | Legacy experiment from an earlier design: Solidity contracts, Foundry tests, merkle-tree scripts, and a farming bot. Still present in the repo but no longer wired into the app |
