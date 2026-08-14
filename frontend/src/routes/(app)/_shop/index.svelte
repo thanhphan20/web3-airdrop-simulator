@@ -19,7 +19,6 @@
 	import ModalExchange from './_modal-exchange.svelte';
 	import GenesisTopup from './genesis-topup/GenesisTopup.svelte';
 	import PaimonBargains from './paimon-bargains/PaimonBargains.svelte';
-	import Donate from './donate/Donate.svelte';
 	import Recomended from './recomended/Recomended.svelte';
 	import CharacterOutfits from './character-outfit/CharacterOutfits.svelte';
 	import WishResult from '../_wish/wish-result/WishResult.svelte';
@@ -127,8 +126,6 @@
 		<title>{$t('shop.recomendedHeading')} | {title}</title>
 	{:else if activeShop === 'outfits'}
 		<title>{$t('outfit.heading')} | {title}</title>
-	{:else if activeShop === 'donate'}
-		<title>Donate | {title}</title>
 	{:else}
 		<title>{$t('shop.paimonHeading')} | {title}</title>
 	{/if}
@@ -171,10 +168,6 @@
 					<!-- Characters Outfits -->
 				{:else if activeShop === 'outfits'}
 					<CharacterOutfits />
-
-					<!-- Donate -->
-				{:else if activeShop === 'donate'}
-					<Donate />
 
 					<!-- Paimon Bargains -->
 				{:else if activeShop === 'paimon-bargains'}

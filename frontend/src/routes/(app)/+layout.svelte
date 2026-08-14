@@ -56,7 +56,7 @@
 		directLoad = !!path[1];
 		preview = path[1] === 'screen';
 
-		const validPaths = ['adkey', 'bnlist', 'install', 'privacy-policy', 'screen'];
+		const validPaths = ['bnlist', 'install', 'privacy-policy', 'screen'];
 		const isPathValid = validPaths.includes(path[1].toLowerCase());
 		const redirect = path[1] && !isPathValid;
 		return redirect;
@@ -177,14 +177,6 @@
 	{#if !$isLoading && isloaded}
 		<slot />
 	{/if}
-	<a
-		href="/"
-		on:click|preventDefault={() => window.location.replace('/')}
-		class="uid"
-		title="Try Your Luck by this Simulator"
-	>
-		WishSimulator.App
-	</a>
 </main>
 
 <style global>

@@ -8,7 +8,6 @@
 		editID,
 		editorMode,
 		preloadVersion,
-		proUser,
 		viewportWidth
 	} from '$lib/store/app-stores';
 	import { BannerManager } from '$lib/helpers/dataAPI/api-indexeddb';
@@ -54,7 +53,6 @@
 		showNote = customList.length < 1;
 	});
 
-	const selectMenu = getContext('selectMenu');
 	const handleClose = getContext('handleMenu');
 	const putNewData = () => {
 		return idb.put({
@@ -130,12 +128,6 @@
 		{:else}
 			<h1><span> {$t('customBanner.createBanner')} </span></h1>
 		{/if}
-
-		{#if customList.length > 3 && !$proUser && !showNote}
-			<div class="notice">
-				{$t('customBanner.limitation')}
-			</div>
-		{/if}
 	</div>
 
 	<div class="wrapper" class:ready>
@@ -187,7 +179,7 @@
 									{/if}
 								</div>
 								<div class="action">
-									{#if !(customList.length > 3 && !$proUser) && !blocked}
+									{#if !blocked}
 										<button class="edit" on:click={() => customizeBanner(itemID)}>
 											<i class="gi-pen" /> <span>{$t('customBanner.edit')}</span>
 										</button>
@@ -207,21 +199,12 @@
 					{/if}
 
 					{#if !maintenance}
-						{#if $proUser || customList.length < 3}
-							<div class="item blank">
-								<button class="add" on:click={() => customizeBanner()}>
-									<i class="gi-plus" />
-									<span>{$t('customBanner.addBanner')}</span>
-								</button>
-							</div>
-						{:else}
-							<div class="item blank locked">
-								<button class="add" on:click={() => selectMenu('proAccess')}>
-									<i class="gi-lock" />
-									<span>{$t('customBanner.memberToUnlock')}</span>
-								</button>
-							</div>
-						{/if}
+						<div class="item blank">
+							<button class="add" on:click={() => customizeBanner()}>
+								<i class="gi-plus" />
+								<span>{$t('customBanner.addBanner')}</span>
+							</button>
+						</div>
 					{:else}
 						<div class="item blank locke disabled">
 							<button class="add" disabled>
@@ -317,18 +300,6 @@
 	.disclaimer :global(ul) {
 		line-height: 1.5;
 		list-style-position: inside;
-	}
-
-	/*  */
-	.notice {
-		width: 100%;
-		margin: 1% 0;
-		padding: 2%;
-		color: #fff;
-		background-color: rgba(217, 67, 67, 0.75);
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		font-size: 100%;
-		font-weight: bold;
 	}
 
 	.wrapper {

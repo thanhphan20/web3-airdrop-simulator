@@ -45,12 +45,7 @@
 				<span />
 			</button>
 		{/if}
-		{#if activeShop === 'donate'}
-			<span> Thank you for every donation you have given to me, I realy appreciate it.</span>
-		{:else}
-			<span> {$t('shop.noLimitTime')} </span>
-		{/if}
-	</div>
+		<span> {$t('shop.noLimitTime')} </span>	</div>
 	<div class="fates">
 		{#if ['genesis', 'outfits', 'recomended'].includes(activeShop)}
 			<MyFund type="primogem" plusbutton>

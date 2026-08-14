@@ -214,23 +214,7 @@
 			<li>
 				I tried to create the simulator with pity system almost like the real game, the rate of
 				getting rare item will increase once you reach a certain pity depending on where banner you
-				pull. you can go <a
-					on:click|stopPropagation
-					href="https://github.com/AguzzTN54/Genshin-Impact-Wish-Simulator#pity-system"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Here
-				</a>
-				to find details of the probability. If you has any idea, please send me feedback by creating
-				<a
-					on:click|stopPropagation
-					href="https://github.com/AguzzTN54/Genshin-Impact-Wish-Simulator/issues"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					new issue here
-				</a>
+				pull.
 			</li>
 			<li>
 				This app use Localstorage and IndexedDB to save your pull history, it's native on your

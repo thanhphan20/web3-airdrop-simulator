@@ -5,24 +5,19 @@
 
 	import { data } from '$lib/data/updates.json';
 	import { isPWA } from '$lib/store/app-stores';
-	import { adKey, verifyKey } from '$lib/helpers/accessKey';
+	import { verifyKey } from '$lib/helpers/accessKey';
 	import { browserDetect } from '$lib/helpers/mobileDetect';
 	import { playSfx } from '$lib/helpers/audio/audio';
 	import Modal from '$lib/components/ModalTpl.svelte';
 
 	let content;
 	let contentHeight;
-	let savedKey = '';
-	let dateExpired = '';
 
 	const startApp = getContext('startApp');
 	const updates = data.filter(({ featured }) => !!featured);
 
 	onMount(async () => {
 		OverlayScrollbars(content, { sizeAutoCapable: false, className: 'os-theme-light' });
-		const { expiryDate, storedKey } = await adKey.initialLoad();
-		dateExpired = expiryDate;
-		savedKey = storedKey;
 	});
 
 	const handleConfirm = () => {
@@ -48,20 +43,6 @@
 					</span>
 					for optimal performance as some features may not be fully supported on.
 				</strong>
-			</div>
-		{:else if dateExpired && dateExpired !== 'none'}
-			<div class="updates adExpired">
-				<div>
-					{@html $t('menu.keyExpired2', {
-						values: { key: `<b>${savedKey}</b>`, date: `<u>${dateExpired}</u>` }
-					})}
-					<a
-						href="https://ko-fi.com/post/AdFree-Wish-Simulator-Enjoy-Simulator-Without-Ads-G2G2DQ57O"
-						target="_blank"
-					>
-						{$t('menu.getNewKey')}
-					</a>
-				</div>
 			</div>
 		{:else}
 			<div class="updates" bind:this={content}>
@@ -111,11 +92,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-	}
-
-	.adExpired a {
-		display: block;
-		margin-top: 1rem;
 	}
 
 	.updates span {

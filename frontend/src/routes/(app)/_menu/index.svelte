@@ -11,7 +11,6 @@
 	import Options from './Settings.svelte';
 	import Updates from './Updates.svelte';
 	import Sidebar from './_sidebar.svelte';
-	import ProAccess from './ProAccess.svelte';
 	import CustomBanner from './CustomBanner.svelte';
 	import BackupRestore from './BackupRestore.svelte';
 	import Wallet from './Wallet.svelte';
@@ -54,8 +53,6 @@
 				<Options />
 			{:else if activeContent === 'updates'}
 				<Updates />
-			{:else if activeContent === 'proAccess'}
-				<ProAccess />
 			{:else if activeContent === 'customBanner'}
 				<CustomBanner />
 			{:else if activeContent === 'backupRestore'}

@@ -91,16 +91,6 @@
 				{$t('shop.crystalTopup')}
 			</span>
 		</button>
-		<button
-			class="link"
-			class:active={activeShop === 'donate'}
-			on:click={() => selectShop('donate')}
-		>
-			<span>
-				<i class="gi-companion" />
-				{$t('donate')}
-			</span>
-		</button>
 	</div>
 </aside>
 

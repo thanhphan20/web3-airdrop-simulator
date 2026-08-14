@@ -98,7 +98,7 @@
 	setContext('navigate', navigate);
 
 	// Component Loader
-	let AllBanners, GachaInfo, Inventory, Shop, Feedback, Menu, ObtainedItem, ModalConvert;
+	let AllBanners, GachaInfo, Inventory, Shop, Menu, ObtainedItem, ModalConvert;
 	const asyncLoadComponent = async () => {
 		ObtainedItem = (await import('$lib/components/ObtainedItem.svelte')).default;
 		ModalConvert = (await import('./_index/ModalConvert.svelte')).default;
@@ -108,7 +108,6 @@
 		AllBanners = (await import('./_allbanners/index.svelte')).default;
 		Inventory = (await import('./_inventory/index.svelte')).default;
 		Shop = (await import('./_shop/index.svelte')).default;
-		Feedback = (await import('./_feedback/index.svelte')).default;
 	};
 
 	// Switching Banner
@@ -160,17 +159,6 @@
 	let showConvertModal = false;
 	setContext('openConvertModal', () => (showConvertModal = true));
 	setContext('closeConvertModal', () => (showConvertModal = false));
-
-	// Feedback
-	let chatLoaded = false; // initial load
-	let showChat = false; // toggle hide-show
-	const chatToggle = () => {
-		chatLoaded = true;
-		showChat = !showChat;
-		playSfx(showChat ? 'shopnav' : 'close');
-	};
-	setContext('chatToggle', chatToggle);
-	$: hotkeys('o', pageActive, chatToggle);
 </script>
 
 {#if status !== 'ok'}
@@ -227,10 +215,6 @@
 <!-- Utility -->
 {#if showConvertModal}
 	<svelte:component this={ModalConvert} />
-{/if}
-
-{#if chatLoaded}
-	<svelte:component this={Feedback} show={showChat} />
 {/if}
 
 {#if showWelkinScreen}

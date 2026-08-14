@@ -11,15 +11,6 @@
 </script>
 
 <div class="updates content-container" in:fade={{ duration: 200 }}>
-	<div class="text">
-		You can Check what are changes we made on <a
-			on:click|stopPropagation
-			href="https://github.com/AguzzTN54/Genshin-Impact-Wish-Simulator"
-			target="_blank"
-		>
-			Github Repository
-		</a>. You can submit an issue if you find something wrong !
-	</div>
 	<div class="update-item" bind:this={updatesContainer}>
 		{#each [...updates.data].reverse() as { description, date }, i (i)}
 			<h2>
@@ -32,23 +23,6 @@
 </div>
 
 <style>
-	.text {
-		color: #fff;
-		margin-bottom: 1rem;
-		font-size: 1rem;
-		font-weight: bold;
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	}
-	.text a {
-		text-decoration: underline;
-		transition: all 0.2s;
-		color: #ffffff;
-	}
-
-	a:hover {
-		color: #f7cf33;
-	}
-
 	.updates .update-item {
 		font-weight: 100;
 		background-color: #fff;

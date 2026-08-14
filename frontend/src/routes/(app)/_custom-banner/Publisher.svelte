@@ -73,7 +73,6 @@
 	};
 
 	// Publish
-	const chatToggle = getContext('chatToggle');
 	const publishError = getContext('publishError');
 	const publishDone = getContext('publishDone');
 	const closePublisher = getContext('closePublisher');
@@ -183,9 +182,6 @@
 		{:else if uploadError}
 			<div class="content" in:fade>
 				<caption class="load-text"> {$t('customBanner.uploadFailed')} </caption>
-				<div class="report">
-					Please <button on:click={chatToggle}>Report</button> if you think this is a mistake!
-				</div>
 				<div style="margin-top: 1rem;">
 					<ButtonModal on:click={closePublisher}>{$t('customBanner.close')}</ButtonModal>
 				</div>
@@ -284,23 +280,6 @@
 
 	.loader {
 		margin: 3% 0;
-	}
-
-	.report {
-		padding-top: 0.5rem;
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		font-style: italic;
-	}
-
-	.report button {
-		color: orange;
-		font-weight: bold;
-		font-style: inherit;
-		transition: all 0.25s;
-	}
-
-	.report button:hover {
-		text-decoration: underline;
 	}
 
 	@media screen and (max-width: 640px) {

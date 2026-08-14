@@ -45,20 +45,6 @@
 		addFunds();
 	};
 
-	const facebookHandle = () => {
-		playSfx();
-		const url = `https://www.facebook.com/sharer/sharer.php?u=${shareLink}&quote=${shareText}`;
-		window.open(url, '_blank');
-		addFunds();
-	};
-
-	const twitterHandle = () => {
-		playSfx();
-		const url = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareLink}`;
-		window.open(url, '_blank');
-		addFunds();
-	};
-
 	const webShareHandle = async () => {
 		try {
 			playSfx();
@@ -104,12 +90,6 @@
 
 			{#if canshare}
 				<div class="divider" />
-				<button class="save" title="Share to Twitter" on:click={twitterHandle}>
-					<i class="gi-twitter" />
-				</button>
-				<button class="save" title="Share to Facebook" on:click={facebookHandle}>
-					<i class="gi-facebook" />
-				</button>
 				<button class="save" title="More Options" on:click={webShareHandle}>
 					<i class="gi-dot-3" />
 				</button>

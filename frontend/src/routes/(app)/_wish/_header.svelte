@@ -44,7 +44,6 @@
 		playSfx('changebanner');
 	};
 
-	const chatToggle = getContext('chatToggle');
 	const navigate = getContext('navigate');
 
 	const previousClick = () => {
@@ -97,9 +96,6 @@
 
 			<button class="help" on:click={handleMenu} title="Setting" aria-label="Setting">
 				<i class="gi-help" />
-			</button>
-			<button class="chat" on:click={chatToggle} title="Chats" aria-label="Chats">
-				<i class="gi-chat" />
 			</button>
 
 			{#if !$isPWA || !$isMobile}
@@ -209,16 +205,11 @@
 		height: 1.7rem;
 	}
 
-	.fullscreen,
-	.chat {
+	.fullscreen {
 		border-color: transparent;
 		transform: scale(1.3);
 		width: 1.3rem;
 		height: 1.3rem;
-	}
-
-	.chat {
-		border-radius: 100%;
 	}
 
 	.bg {

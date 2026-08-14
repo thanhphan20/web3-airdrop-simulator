@@ -7,11 +7,9 @@
 		customData,
 		editID,
 		editorMode as editMode,
-		isCustomBanner,
-		proUser
+		isCustomBanner
 	} from '$lib/store/app-stores';
 	import { playSfx } from '$lib/helpers/audio/audio';
-	import { BannerManager } from '$lib/helpers/dataAPI/api-indexeddb';
 	import { maintenance } from '$lib/helpers/banner-custom';
 	import { highlightBannerName } from '$lib/helpers/nameText';
 	import SvgIcon from '$lib/components/SVGIcon.svelte';
@@ -33,13 +31,7 @@
 	};
 
 	let infoContainer;
-	let myBannerCount = 0;
-	$: disableEdit = !$proUser && myBannerCount > 3;
 	onMount(async () => {
-		const { getListByStatus } = BannerManager;
-		const list = (await getListByStatus('owned')) || [];
-		myBannerCount = list.length;
-
 		if (onBannerEdit) return;
 		OverlayScrollbars(infoContainer, {
 			sizeAutoCapable: false,
@@ -61,7 +53,7 @@
 
 	{#if $isCustomBanner}
 		<div class="action">
-			{#if $customData.status === 'owned' && !editorMode && !disableEdit}
+			{#if $customData.status === 'owned' && !editorMode}
 				<button class="edit" on:click={editBanner}>
 					<i class="gi-pen" /> <span>{$t('customBanner.edit')}</span>
 				</button>
